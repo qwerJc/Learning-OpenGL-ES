@@ -20,6 +20,8 @@
 		32061631249DD33A0047B17D /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32061630249DD33A0047B17D /* GLKit.framework */; };
 		32061633249DD3490047B17D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32061632249DD3490047B17D /* CoreGraphics.framework */; };
 		32061636249DD5680047B17D /* GLKViewController+BtnBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32061635249DD5680047B17D /* GLKViewController+BtnBack.m */; };
+		3225CB9724A0EFFC00FB2018 /* ViewController_CH3_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3225CB9624A0EFFC00FB2018 /* ViewController_CH3_1.m */; };
+		3225CB9924A0F27900FB2018 /* img1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3225CB9824A0F27900FB2018 /* img1-1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,9 @@
 		32061632249DD3490047B17D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32061634249DD5680047B17D /* GLKViewController+BtnBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLKViewController+BtnBack.h"; sourceTree = "<group>"; };
 		32061635249DD5680047B17D /* GLKViewController+BtnBack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GLKViewController+BtnBack.m"; sourceTree = "<group>"; };
+		3225CB9524A0EFFC00FB2018 /* ViewController_CH3_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH3_1.h; sourceTree = "<group>"; };
+		3225CB9624A0EFFC00FB2018 /* ViewController_CH3_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH3_1.m; sourceTree = "<group>"; };
+		3225CB9824A0F27900FB2018 /* img1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img1-1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +87,7 @@
 			children = (
 				3206160B249DCC5B0047B17D /* AppDelegate.h */,
 				3206160C249DCC5B0047B17D /* AppDelegate.m */,
+				3225CB9824A0F27900FB2018 /* img1-1.png */,
 				3206160E249DCC5B0047B17D /* SceneDelegate.h */,
 				3206160F249DCC5B0047B17D /* SceneDelegate.m */,
 				32061611249DCC5B0047B17D /* ViewController.h */,
@@ -89,6 +95,7 @@
 				32061634249DD5680047B17D /* GLKViewController+BtnBack.h */,
 				32061635249DD5680047B17D /* GLKViewController+BtnBack.m */,
 				32061627249DCCEE0047B17D /* Chapter2 */,
+				3225CB92249FA7DF00FB2018 /* Chapter3 */,
 				32061614249DCC5B0047B17D /* Main.storyboard */,
 				32061617249DCC600047B17D /* Assets.xcassets */,
 				32061619249DCC600047B17D /* LaunchScreen.storyboard */,
@@ -116,6 +123,15 @@
 				3206162C249DD32E0047B17D /* OpenGLES.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3225CB92249FA7DF00FB2018 /* Chapter3 */ = {
+			isa = PBXGroup;
+			children = (
+				3225CB9524A0EFFC00FB2018 /* ViewController_CH3_1.h */,
+				3225CB9624A0EFFC00FB2018 /* ViewController_CH3_1.m */,
+			);
+			path = Chapter3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3206161B249DCC600047B17D /* LaunchScreen.storyboard in Resources */,
+				3225CB9924A0F27900FB2018 /* img1-1.png in Resources */,
 				32061618249DCC600047B17D /* Assets.xcassets in Resources */,
 				32061616249DCC5B0047B17D /* Main.storyboard in Resources */,
 			);
@@ -192,6 +209,7 @@
 				32061613249DCC5B0047B17D /* ViewController.m in Sources */,
 				3206160D249DCC5B0047B17D /* AppDelegate.m in Sources */,
 				32061636249DD5680047B17D /* GLKViewController+BtnBack.m in Sources */,
+				3225CB9724A0EFFC00FB2018 /* ViewController_CH3_1.m in Sources */,
 				3206161E249DCC600047B17D /* main.m in Sources */,
 				32061610249DCC5B0047B17D /* SceneDelegate.m in Sources */,
 			);
