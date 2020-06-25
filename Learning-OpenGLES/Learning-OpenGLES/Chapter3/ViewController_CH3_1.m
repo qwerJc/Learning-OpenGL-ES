@@ -8,7 +8,7 @@
 
 #import "ViewController_CH3_1.h"
 #import "GLKViewController+BtnBack.h"
-#import "GLKVertexAttribArrayBuffer.h"
+#import "AGLKVertexAttribArrayBuffer.h"
 
 // 定义名为 SceneVertex 的结构体，用来保存 GLKVector3 类型的成员
 // GLKVector3保存了 XYZ 这3个坐标，即代表起始于坐标系远点的矢量

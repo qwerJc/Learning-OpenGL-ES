@@ -7,7 +7,7 @@
 //
 
 #import <GLKit/GLKit.h>
-@class GLKVertexAttribArrayBuffer;
+@class AGLKVertexAttribArrayBuffer;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
    GLuint vertexBufferID; // 保存顶点数据缓存的标识符
 }
 @property (strong, nonatomic) GLKBaseEffect *baseEffect;  // 实例指针
-@property (strong, nonatomic) GLKVertexAttribArrayBuffer *vertexBuffer;
+@property (strong, nonatomic) AGLKVertexAttribArrayBuffer *vertexBuffer;
 @end
 
 NS_ASSUME_NONNULL_END

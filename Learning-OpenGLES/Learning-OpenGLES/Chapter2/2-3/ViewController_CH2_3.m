@@ -8,7 +8,7 @@
 
 #import "ViewController_CH2_3.h"
 #import "AGLKContext.h"
-#import "GLKVertexAttribArrayBuffer.h"
+#import "AGLKVertexAttribArrayBuffer.h"
 
 typedef struct {
    GLKVector3  positionCoords;
@@ -52,7 +52,7 @@ static const SceneVertex vertices[] =
     ((AGLKContext *)view.context).clearColor = GLKVector4Make(0.f, 0.f, 0.f, 1.f);
     
     // 创建顶点数据准备绘制
-    self.vertexBuffer = [[GLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneVertex)
+    self.vertexBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneVertex)
                                                                 numberOfVertices:sizeof(vertices)/sizeof(SceneVertex)
                                                                     attribOffset:vertices
                                                                            usage:GL_STATIC_DRAW];
