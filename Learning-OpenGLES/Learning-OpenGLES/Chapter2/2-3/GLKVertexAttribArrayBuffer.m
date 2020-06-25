@@ -26,19 +26,19 @@
     
     self = [super init];
     if (self) {
-        _stride = stride;
-        _bufferSizeBytes = stride*cout;
+        stride = stride;
+        bufferSizeBytes = stride*cout;
         
         // step 1
-        glGenBuffers(1, &_glName);
+        glGenBuffers(1, &glName);
         
         // step 2
-        glBindBuffer(GL_ARRAY_BUFFER, self.glName);
+        glBindBuffer(GL_ARRAY_BUFFER, glName);
         
         // step 3
-        glBufferData(GL_ARRAY_BUFFER, _bufferSizeBytes, dataPtr, usage);
+        glBufferData(GL_ARRAY_BUFFER, bufferSizeBytes, dataPtr, usage);
         
-        NSAssert(_glName!=0, @"Failed to grenerate glName");
+        NSAssert(glName!=0, @"Failed to grenerate glName");
     }
     return self;
 }
@@ -49,7 +49,7 @@
                    shouldEnable:(BOOL)shouldEnable {
     NSParameterAssert((0<count) && (count<4));
     NSParameterAssert(self.stride < offset);
-    NSAssert(_glName!=0, @"Invalid glName");
+    NSAssert(self.glName!=0, @"Invalid glName");
     
     // step2
     glBindBuffer(GL_ARRAY_BUFFER, self.glName);

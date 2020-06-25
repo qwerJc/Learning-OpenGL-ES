@@ -15,11 +15,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GLKVertexAttribArrayBuffer : NSObject
-{
-    GLsizeiptr  _stride;
-    GLsizeiptr  _bufferSizeBytes;
-    GLuint      _glName;
-}
 @property (nonatomic, readonly) GLuint glName;
 @property (nonatomic, readonly) GLsizeiptr bufferSizeBytes;
 @property (nonatomic, readonly) GLsizeiptr stride;
