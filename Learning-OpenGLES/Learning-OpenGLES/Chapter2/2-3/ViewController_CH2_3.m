@@ -7,6 +7,7 @@
 //
 
 #import "ViewController_CH2_3.h"
+#import "GLKViewController+BtnBack.h"
 #import "AGLKContext.h"
 #import "AGLKVertexAttribArrayBuffer.h"
 
@@ -35,6 +36,7 @@ static const SceneVertex vertices[] =
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self addBtnBackOnView:self.view];
     
     GLKView *view = (GLKView *)self.view;
     NSAssert([view isKindOfClass:[GLKView class]], @"View Controller's view is not a GLKView");

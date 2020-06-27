@@ -49,7 +49,7 @@
             numberOfCoordinates:(GLint)count
                            data:(GLsizeiptr)offset
                    shouldEnable:(BOOL)shouldEnable {
-    NSParameterAssert((0<count) && (count<4));
+//    NSParameterAssert((0<count) && (count<4));
     NSParameterAssert(offset < self.stride); // 防止越界
     NSAssert(self.glName!=0, @"Invalid glName");
     

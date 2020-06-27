@@ -24,6 +24,9 @@
 		3225CB9924A0F27900FB2018 /* img1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3225CB9824A0F27900FB2018 /* img1-1.png */; };
 		324C8F1524A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 324C8F1424A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m */; };
 		3283CF4424A4B992008BA71B /* ViewController_CH2_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 3283CF4324A4B992008BA71B /* ViewController_CH2_3.m */; };
+		3299ACF524A58E3B003FB104 /* ViewController_CH2_Practice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3299ACF424A58E3B003FB104 /* ViewController_CH2_Practice.m */; };
+		3299ACFA24A5B796003FB104 /* AGLKTextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3299ACF924A5B796003FB104 /* AGLKTextureLoader.m */; };
+		3299ACFD24A63AF4003FB104 /* ViewController_CH3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3299ACFC24A63AF4003FB104 /* ViewController_CH3_2.m */; };
 		32A78DEB24A30788008D937C /* AGLKContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A78DEA24A30788008D937C /* AGLKContext.m */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,12 @@
 		324C8F1424A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKVertexAttribArrayBuffer.m; sourceTree = "<group>"; };
 		3283CF4224A4B992008BA71B /* ViewController_CH2_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH2_3.h; sourceTree = "<group>"; };
 		3283CF4324A4B992008BA71B /* ViewController_CH2_3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH2_3.m; sourceTree = "<group>"; };
+		3299ACF324A58E3B003FB104 /* ViewController_CH2_Practice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH2_Practice.h; sourceTree = "<group>"; };
+		3299ACF424A58E3B003FB104 /* ViewController_CH2_Practice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH2_Practice.m; sourceTree = "<group>"; };
+		3299ACF824A5B796003FB104 /* AGLKTextureLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKTextureLoader.h; sourceTree = "<group>"; };
+		3299ACF924A5B796003FB104 /* AGLKTextureLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKTextureLoader.m; sourceTree = "<group>"; };
+		3299ACFB24A63AF4003FB104 /* ViewController_CH3_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH3_2.h; sourceTree = "<group>"; };
+		3299ACFC24A63AF4003FB104 /* ViewController_CH3_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH3_2.m; sourceTree = "<group>"; };
 		32A78DE924A30788008D937C /* AGLKContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKContext.h; sourceTree = "<group>"; };
 		32A78DEA24A30788008D937C /* AGLKContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKContext.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,8 +147,8 @@
 		3225CB92249FA7DF00FB2018 /* Chapter3 */ = {
 			isa = PBXGroup;
 			children = (
-				3225CB9524A0EFFC00FB2018 /* ViewController_CH3_1.h */,
-				3225CB9624A0EFFC00FB2018 /* ViewController_CH3_1.m */,
+				3299ACF624A5AD0A003FB104 /* 3-1 */,
+				3299ACF724A5AD23003FB104 /* 3-2 */,
 			);
 			path = Chapter3;
 			sourceTree = "<group>";
@@ -147,8 +156,30 @@
 		3299ACF224A4F2BD003FB104 /* 2-练习：画一个正方形 */ = {
 			isa = PBXGroup;
 			children = (
+				3299ACF324A58E3B003FB104 /* ViewController_CH2_Practice.h */,
+				3299ACF424A58E3B003FB104 /* ViewController_CH2_Practice.m */,
 			);
 			path = "2-练习：画一个正方形";
+			sourceTree = "<group>";
+		};
+		3299ACF624A5AD0A003FB104 /* 3-1 */ = {
+			isa = PBXGroup;
+			children = (
+				3225CB9524A0EFFC00FB2018 /* ViewController_CH3_1.h */,
+				3225CB9624A0EFFC00FB2018 /* ViewController_CH3_1.m */,
+			);
+			path = "3-1";
+			sourceTree = "<group>";
+		};
+		3299ACF724A5AD23003FB104 /* 3-2 */ = {
+			isa = PBXGroup;
+			children = (
+				3299ACF824A5B796003FB104 /* AGLKTextureLoader.h */,
+				3299ACF924A5B796003FB104 /* AGLKTextureLoader.m */,
+				3299ACFB24A63AF4003FB104 /* ViewController_CH3_2.h */,
+				3299ACFC24A63AF4003FB104 /* ViewController_CH3_2.m */,
+			);
+			path = "3-2";
 			sourceTree = "<group>";
 		};
 		32A78DE724A306F6008D937C /* 2-1 */ = {
@@ -244,6 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3299ACF524A58E3B003FB104 /* ViewController_CH2_Practice.m in Sources */,
+				3299ACFA24A5B796003FB104 /* AGLKTextureLoader.m in Sources */,
+				3299ACFD24A63AF4003FB104 /* ViewController_CH3_2.m in Sources */,
 				32061626249DCCDD0047B17D /* ViewController_CH2_1.m in Sources */,
 				32061613249DCC5B0047B17D /* ViewController.m in Sources */,
 				324C8F1524A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m in Sources */,

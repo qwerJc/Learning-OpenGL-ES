@@ -57,7 +57,7 @@ static const SceneVertex vertices[] =
     // 初始化 baseEffect 属性来提供标准的 OpenGL ES 2.0
     // GLKBaseEffect类提供了 不依赖当前OpenGLES版本 的 OpenGLES渲染方法
     self.baseEffect = [[GLKBaseEffect alloc] init];
-    self.baseEffect.useConstantColor = GL_TRUE;
+    self.baseEffect.useConstantColor = GL_TRUE; // 使用恒定颜色
     // 这里使用恒定的白色来渲染三角形（三角形中每个像素都为白色）
     self.baseEffect.constantColor = GLKVector4Make(
        1.0f, // Red
