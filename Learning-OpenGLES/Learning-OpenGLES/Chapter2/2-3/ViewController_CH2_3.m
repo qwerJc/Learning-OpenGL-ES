@@ -56,7 +56,7 @@ static const SceneVertex vertices[] =
     // 创建顶点数据准备绘制
     self.vertexBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneVertex)
                                                                 numberOfVertices:sizeof(vertices)/sizeof(SceneVertex)
-                                                                    attribOffset:vertices
+                                                                    bytes:vertices
                                                                            usage:GL_STATIC_DRAW];
 }
 

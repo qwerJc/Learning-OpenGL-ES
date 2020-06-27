@@ -19,7 +19,7 @@
 
 - (id)initWithAttribStride:(GLsizeiptr)stride
           numberOfVertices:(GLsizei)cout
-              attribOffset:(const GLvoid *)dataPtr
+                     bytes:(const GLvoid *)dataPtr
                      usage:(GLenum)usage {
     // 断言，不满足时则抛出异常
     NSParameterAssert(0 < stride);

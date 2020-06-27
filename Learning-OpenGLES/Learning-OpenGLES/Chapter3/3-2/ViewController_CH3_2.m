@@ -54,7 +54,7 @@ static const SceneVertex vertices[] =
     
     self.vertexBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneVertex)
                                                                  numberOfVertices:sizeof(vertices)/sizeof(SceneVertex)
-                                                                     attribOffset:vertices
+                                                                     bytes:vertices
                                                                             usage:GL_STATIC_DRAW];
     CGImageRef imageRef = [[UIImage imageNamed:@"img1-1.png"] CGImage];
     

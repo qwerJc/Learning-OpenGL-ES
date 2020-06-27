@@ -56,7 +56,7 @@ static const SceneVertex vertices[] =
     
     self.vertexBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneVertex)
                                                                  numberOfVertices:sizeof(vertices)/sizeof(SceneVertex)
-                                                                     attribOffset:vertices
+                                                                     bytes:vertices
                                                                             usage:GL_STATIC_DRAW];
     
     /**⚠️新增：初始化 纹理*/

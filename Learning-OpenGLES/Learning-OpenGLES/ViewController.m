@@ -15,6 +15,8 @@
 #import "ViewController_CH3_1.h"
 #import "ViewController_CH3_2.h"
 
+#import "ViewController_CH4_1.h"
+
 @interface ViewController ()
 
 @end
@@ -29,6 +31,7 @@
     
     [self createChapter3Btn];
     
+    [self createChapter4Btn];
 }
 
 #pragma mark - Chapter 2
@@ -112,4 +115,40 @@
     vc.modalPresentationStyle = 0;
     [self presentViewController:vc animated:YES completion:^{}];
 }
+
+#pragma mark - Chapter 3
+- (void)createChapter4Btn {
+    UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(10, 230.f, 80, 40)];
+    btn1.backgroundColor = [UIColor redColor];
+    [btn1 setTitle:@"Ch4-1" forState:UIControlStateNormal];
+    [btn1 addTarget:self
+             action:@selector(onShowChapter4_1)
+   forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn1];
+    
+    UIButton *btn2 = [[UIButton alloc] initWithFrame:CGRectMake(100, 230.f, 80, 40)];
+    btn2.backgroundColor = [UIColor redColor];
+    [btn2 setTitle:@"Ch4-2" forState:UIControlStateNormal];
+    [btn2 addTarget:self
+             action:@selector(onShowChapter4_2)
+   forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn2];
+}
+
+- (void)onShowChapter4_1 {
+    ViewController_CH4_1 *vc = [[ViewController_CH4_1 alloc] init];
+    vc.modalPresentationStyle = 0;
+    [self presentViewController:vc
+                       animated:YES
+                     completion:^{}];
+}
+
+- (void)onShowChapter4_2 {
+    ViewController_CH4_1 *vc = [[ViewController_CH4_1 alloc] init];
+    vc.modalPresentationStyle = 0;
+    [self presentViewController:vc
+                       animated:YES
+                     completion:^{}];
+}
+
 @end

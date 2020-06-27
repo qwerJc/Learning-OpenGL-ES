@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (id)initWithAttribStride:(GLsizeiptr)stride
           numberOfVertices:(GLsizei)cout
-              attribOffset:(const GLvoid *)dataPtr
+                     bytes:(const GLvoid *)dataPtr
                      usage:(GLenum)usage;
 
 /**
