@@ -24,6 +24,7 @@
 		3225CB9924A0F27900FB2018 /* img1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3225CB9824A0F27900FB2018 /* img1-1.png */; };
 		324C8F1524A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 324C8F1424A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m */; };
 		3283CF4424A4B992008BA71B /* ViewController_CH2_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 3283CF4324A4B992008BA71B /* ViewController_CH2_3.m */; };
+		328D41BE24A74C3400240396 /* ViewController_CH3_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 328D41BD24A74C3400240396 /* ViewController_CH3_3.m */; };
 		3299ACF524A58E3B003FB104 /* ViewController_CH2_Practice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3299ACF424A58E3B003FB104 /* ViewController_CH2_Practice.m */; };
 		3299ACFA24A5B796003FB104 /* AGLKTextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3299ACF924A5B796003FB104 /* AGLKTextureLoader.m */; };
 		3299ACFD24A63AF4003FB104 /* ViewController_CH3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3299ACFC24A63AF4003FB104 /* ViewController_CH3_2.m */; };
@@ -58,6 +59,8 @@
 		324C8F1424A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKVertexAttribArrayBuffer.m; sourceTree = "<group>"; };
 		3283CF4224A4B992008BA71B /* ViewController_CH2_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH2_3.h; sourceTree = "<group>"; };
 		3283CF4324A4B992008BA71B /* ViewController_CH2_3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH2_3.m; sourceTree = "<group>"; };
+		328D41BC24A74C3400240396 /* ViewController_CH3_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH3_3.h; sourceTree = "<group>"; };
+		328D41BD24A74C3400240396 /* ViewController_CH3_3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH3_3.m; sourceTree = "<group>"; };
 		3299ACF324A58E3B003FB104 /* ViewController_CH2_Practice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH2_Practice.h; sourceTree = "<group>"; };
 		3299ACF424A58E3B003FB104 /* ViewController_CH2_Practice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH2_Practice.m; sourceTree = "<group>"; };
 		3299ACF824A5B796003FB104 /* AGLKTextureLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKTextureLoader.h; sourceTree = "<group>"; };
@@ -128,7 +131,7 @@
 			children = (
 				32A78DE724A306F6008D937C /* 2-1 */,
 				32A78DE824A30704008D937C /* 2-3 */,
-				3299ACF224A4F2BD003FB104 /* 2-练习：画一个正方形 */,
+				3299ACF224A4F2BD003FB104 /* 2-练习：画一个正方形并贴图 */,
 			);
 			path = Chapter2;
 			sourceTree = "<group>";
@@ -149,17 +152,51 @@
 			children = (
 				3299ACF624A5AD0A003FB104 /* 3-1 */,
 				3299ACF724A5AD23003FB104 /* 3-2 */,
+				328D41B824A74BFC00240396 /* 3-3 */,
+				328D41B924A74C0300240396 /* 3-4 */,
+				328D41BA24A74C0800240396 /* 3-5 */,
+				328D41BB24A74C0D00240396 /* 3-6 */,
 			);
 			path = Chapter3;
 			sourceTree = "<group>";
 		};
-		3299ACF224A4F2BD003FB104 /* 2-练习：画一个正方形 */ = {
+		328D41B824A74BFC00240396 /* 3-3 */ = {
+			isa = PBXGroup;
+			children = (
+				328D41BC24A74C3400240396 /* ViewController_CH3_3.h */,
+				328D41BD24A74C3400240396 /* ViewController_CH3_3.m */,
+			);
+			path = "3-3";
+			sourceTree = "<group>";
+		};
+		328D41B924A74C0300240396 /* 3-4 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "3-4";
+			sourceTree = "<group>";
+		};
+		328D41BA24A74C0800240396 /* 3-5 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "3-5";
+			sourceTree = "<group>";
+		};
+		328D41BB24A74C0D00240396 /* 3-6 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "3-6";
+			sourceTree = "<group>";
+		};
+		3299ACF224A4F2BD003FB104 /* 2-练习：画一个正方形并贴图 */ = {
 			isa = PBXGroup;
 			children = (
 				3299ACF324A58E3B003FB104 /* ViewController_CH2_Practice.h */,
 				3299ACF424A58E3B003FB104 /* ViewController_CH2_Practice.m */,
 			);
-			path = "2-练习：画一个正方形";
+			path = "2-练习：画一个正方形并贴图";
 			sourceTree = "<group>";
 		};
 		3299ACF624A5AD0A003FB104 /* 3-1 */ = {
@@ -282,6 +319,7 @@
 				32061613249DCC5B0047B17D /* ViewController.m in Sources */,
 				324C8F1524A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m in Sources */,
 				32A78DEB24A30788008D937C /* AGLKContext.m in Sources */,
+				328D41BE24A74C3400240396 /* ViewController_CH3_3.m in Sources */,
 				3206160D249DCC5B0047B17D /* AppDelegate.m in Sources */,
 				32061636249DD5680047B17D /* GLKViewController+BtnBack.m in Sources */,
 				3225CB9724A0EFFC00FB2018 /* ViewController_CH3_1.m in Sources */,

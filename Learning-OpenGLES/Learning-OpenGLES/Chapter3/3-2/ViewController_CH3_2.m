@@ -27,9 +27,9 @@ SceneVertex;
 // 用顶点数据初始化的C数组，用来定义一个三角形
 static const SceneVertex vertices[] =
 {
-    {{-0.5f, -0.5f, 0.0},{0.4f,0.2f}}, // lower left corner
-    {{ 0.5f, -0.5f, 0.0},{1.f,0.f}}, // lower right corner
-    {{-0.5f,  0.5f, 0.0},{0.1f,1.f}}  // upper left corner
+    {{-0.5f, -0.5f, 0.0},{0.f,1.f}}, // lower left corner
+    {{ 0.5f, -0.5f, 0.0},{1.f,1.f}}, // lower right corner
+    {{-0.5f,  0.5f, 0.0},{0.f,0.f}}  // upper left corner
 };
 
 

@@ -10,7 +10,7 @@
 
 @implementation GLKViewController (BtnBack)
 - (void)addBtnBackOnView:(UIView *)view {
-    UIButton *btnBack = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 64, 44)];
+    UIButton *btnBack = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 104, 44)];
     [btnBack setTitle:@"返回" forState:UIControlStateNormal];
     [btnBack addTarget:self action:@selector(onBackAction) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btnBack];
