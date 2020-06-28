@@ -27,7 +27,7 @@ typedef struct {
 
 /**
  ADG
- CEH
+ BEH
  CFI
 */
 
@@ -51,7 +51,7 @@ static const SceneVertex vertexI = {{ 0.5, -0.5, -0.5}, {0.0, 0.0, 1.0}};
 @property (strong, nonatomic) AGLKVertexAttribArrayBuffer *vertexBuffer;
 @property (strong, nonatomic) AGLKVertexAttribArrayBuffer *extraBuffer;
 
-@property (nonatomic) GLfloat centerVertexHeight;
+@property (nonatomic) GLfloat centerVertexHeight; // 三角形中心的高度
 @property (nonatomic) BOOL shouldUseFaceNormals;
 @property (nonatomic) BOOL shouldDrawNormals;
 
@@ -90,7 +90,7 @@ static GLKVector3 SceneTriangleFaceNormal(
 }
 
 #pragma mark - Utility GLKVector3 functions
-
+/** 计算单位法向量 */
 GLKVector3 SceneVector3UnitNormal(
    const GLKVector3 vectorA,
    const GLKVector3 vectorB)
@@ -130,16 +130,6 @@ GLKVector3 SceneVector3UnitNormal(
        0.0f, // Blue
        1.0f);// Alpha
     
-    /*************** 初始化三角形 **************/
-    triangles[0] = SceneTriangleMake(vertexA, vertexB, vertexD);
-    triangles[1] = SceneTriangleMake(vertexB, vertexC, vertexF);
-    triangles[2] = SceneTriangleMake(vertexD, vertexB, vertexE);
-    triangles[3] = SceneTriangleMake(vertexE, vertexB, vertexF);
-    triangles[4] = SceneTriangleMake(vertexD, vertexE, vertexH);
-    triangles[5] = SceneTriangleMake(vertexE, vertexF, vertexH);
-    triangles[6] = SceneTriangleMake(vertexG, vertexD, vertexH);
-    triangles[7] = SceneTriangleMake(vertexH, vertexF, vertexI);
-    
     /*************** 场景旋转 **************/
     {  // Comment out this block to render the scene top down
        GLKMatrix4 modelViewMatrix = GLKMatrix4MakeRotation(
@@ -155,13 +145,31 @@ GLKVector3 SceneVector3UnitNormal(
        self.extraEffect.transform.modelviewMatrix = modelViewMatrix;
     }
     
+    // BG color
     ((AGLKContext *)view.context).clearColor = GLKVector4Make(.7f, .7f, .5f, 1.f);
+    
+    /*************** 初始化三角形 **************/
+       triangles[0] = SceneTriangleMake(vertexA, vertexB, vertexD);
+       triangles[1] = SceneTriangleMake(vertexB, vertexC, vertexF);
+       triangles[2] = SceneTriangleMake(vertexD, vertexB, vertexE);
+       triangles[3] = SceneTriangleMake(vertexE, vertexB, vertexF);
+       triangles[4] = SceneTriangleMake(vertexD, vertexE, vertexH);
+       triangles[5] = SceneTriangleMake(vertexE, vertexF, vertexH);
+       triangles[6] = SceneTriangleMake(vertexG, vertexD, vertexH);
+       triangles[7] = SceneTriangleMake(vertexH, vertexF, vertexI);
     
 
     self.vertexBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneVertex)
                                                                  numberOfVertices:sizeof(triangles)/sizeof(SceneVertex)
                                                                             bytes:triangles
                                                                             usage:GL_DYNAMIC_DRAW];
+    
+    self.extraBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneVertex)
+                                                                numberOfVertices:0
+                                                                           bytes:NULL
+                                                                           usage:GL_DYNAMIC_DRAW];
+    
+//    [self updateNormals];
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
@@ -174,6 +182,7 @@ GLKVector3 SceneVector3UnitNormal(
                                           data:offsetof(SceneVertex, position)
                                   shouldEnable:YES];
     
+    // 法向量
     [self.vertexBuffer prepareToDrawWithAttrib:GLKVertexAttribNormal
                            numberOfCoordinates:3
                                           data:offsetof(SceneVertex, normal)
@@ -197,6 +206,10 @@ GLKVector3 SceneVector3UnitNormal(
     switch2.center = CGPointMake(200, 80);
     [switch2 addTarget:self action:@selector(onSwith2Action) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:switch2];
+    
+    UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 120, 330, 50)];
+    [slider addTarget:self action:@selector(sliderChange:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:slider];
 }
 
 - (void)onSwith1Action {
@@ -207,6 +220,216 @@ GLKVector3 SceneVector3UnitNormal(
     
 }
 
-#pragma mark - GLKView
+- (void)sliderChange:(UISlider *)sender {
+    NSLog(@"value :%f",sender.value);
+    self.centerVertexHeight = sender.value;
+}
+
+#pragma mark - Over Write
+- (void)setCenterVertexHeight:(GLfloat)aValue
+{
+    _centerVertexHeight = aValue;
+    
+    SceneVertex newVertexE = vertexE;
+    newVertexE.position.z = self.centerVertexHeight;
+    
+    triangles[2] = SceneTriangleMake(vertexD, vertexB, newVertexE);
+    triangles[3] = SceneTriangleMake(newVertexE, vertexB, vertexF);
+    triangles[4] = SceneTriangleMake(vertexD, newVertexE, vertexH);
+    triangles[5] = SceneTriangleMake(newVertexE, vertexF, vertexH);
+    
+    [self updateNormals];
+}
+
+#pragma mark - 新增
+static void SceneTrianglesUpdateFaceNormals(
+   SceneTriangle someTriangles[NUM_FACES])
+{
+   int                i;
+   
+   for (i=0; i<NUM_FACES; i++)
+   {
+      GLKVector3 faceNormal = SceneTriangleFaceNormal(someTriangles[i]);
+      someTriangles[i].vertices[0].normal = faceNormal;
+      someTriangles[i].vertices[1].normal = faceNormal;
+      someTriangles[i].vertices[2].normal = faceNormal;
+   }
+}
+
+static void SceneTrianglesUpdateVertexNormals(
+   SceneTriangle someTriangles[NUM_FACES])
+{
+   SceneVertex newVertexA = vertexA;
+   SceneVertex newVertexB = vertexB;
+   SceneVertex newVertexC = vertexC;
+   SceneVertex newVertexD = vertexD;
+   SceneVertex newVertexE = someTriangles[3].vertices[0];
+   SceneVertex newVertexF = vertexF;
+   SceneVertex newVertexG = vertexG;
+   SceneVertex newVertexH = vertexH;
+   SceneVertex newVertexI = vertexI;
+   GLKVector3 faceNormals[NUM_FACES];
+   
+   // Calculate the face normal of each triangle
+   for (int i=0; i<NUM_FACES; i++)
+   {
+      faceNormals[i] = SceneTriangleFaceNormal(
+         someTriangles[i]);
+   }
+   
+   // Average each of the vertex normals with the face normals of
+   // the 4 adjacent vertices
+   newVertexA.normal = faceNormals[0];
+   newVertexB.normal = GLKVector3MultiplyScalar(
+      GLKVector3Add(
+         GLKVector3Add(
+            GLKVector3Add(
+               faceNormals[0],
+               faceNormals[1]),
+            faceNormals[2]),
+         faceNormals[3]), 0.25);
+   newVertexC.normal = faceNormals[1];
+   newVertexD.normal = GLKVector3MultiplyScalar(
+      GLKVector3Add(
+         GLKVector3Add(
+            GLKVector3Add(
+               faceNormals[0],
+               faceNormals[2]),
+            faceNormals[4]),
+         faceNormals[6]), 0.25);
+   newVertexE.normal = GLKVector3MultiplyScalar(
+      GLKVector3Add(
+         GLKVector3Add(
+            GLKVector3Add(
+               faceNormals[2],
+               faceNormals[3]),
+            faceNormals[4]),
+         faceNormals[5]), 0.25);
+   newVertexF.normal = GLKVector3MultiplyScalar(
+      GLKVector3Add(
+         GLKVector3Add(
+            GLKVector3Add(
+               faceNormals[1],
+               faceNormals[3]),
+            faceNormals[5]),
+         faceNormals[7]), 0.25);
+   newVertexG.normal = faceNormals[6];
+   newVertexH.normal = GLKVector3MultiplyScalar(
+      GLKVector3Add(
+         GLKVector3Add(
+            GLKVector3Add(
+               faceNormals[4],
+               faceNormals[5]),
+            faceNormals[6]),
+         faceNormals[7]), 0.25);
+   newVertexI.normal = faceNormals[7];
+   
+   // Recreate the triangles for the scene using the new
+   // vertices that have recalculated normals
+   someTriangles[0] = SceneTriangleMake(
+      newVertexA,
+      newVertexB,
+      newVertexD);
+   someTriangles[1] = SceneTriangleMake(
+      newVertexB,
+      newVertexC,
+      newVertexF);
+   someTriangles[2] = SceneTriangleMake(
+      newVertexD,
+      newVertexB,
+      newVertexE);
+   someTriangles[3] = SceneTriangleMake(
+      newVertexE,
+      newVertexB,
+      newVertexF);
+   someTriangles[4] = SceneTriangleMake(
+      newVertexD,
+      newVertexE,
+      newVertexH);
+   someTriangles[5] = SceneTriangleMake(
+      newVertexE,
+      newVertexF,
+      newVertexH);
+   someTriangles[6] = SceneTriangleMake(
+      newVertexG,
+      newVertexD,
+      newVertexH);
+   someTriangles[7] = SceneTriangleMake(
+      newVertexH,
+      newVertexF,
+      newVertexI);
+}
+
+
+/////////////////////////////////////////////////////////////////
+// This function initializes the values in someNormalLineVertices
+// with vertices for lines that represent the normal vectors for
+// 8 triangles and a line that represents the light direction.
+static  void SceneTrianglesNormalLinesUpdate(
+   const SceneTriangle someTriangles[NUM_FACES],
+   GLKVector3 lightPosition,
+   GLKVector3 someNormalLineVertices[NUM_LINE_VERTS])
+{
+   int                       trianglesIndex;
+   int                       lineVetexIndex = 0;
+   
+   // Define lines that indicate direction of each normal vector
+   for (trianglesIndex = 0; trianglesIndex < NUM_FACES;
+      trianglesIndex++)
+   {
+      someNormalLineVertices[lineVetexIndex++] =
+         someTriangles[trianglesIndex].vertices[0].position;
+      someNormalLineVertices[lineVetexIndex++] =
+         GLKVector3Add(
+            someTriangles[trianglesIndex].vertices[0].position,
+            GLKVector3MultiplyScalar(
+               someTriangles[trianglesIndex].vertices[0].normal,
+               0.5));
+      someNormalLineVertices[lineVetexIndex++] =
+         someTriangles[trianglesIndex].vertices[1].position;
+      someNormalLineVertices[lineVetexIndex++] =
+         GLKVector3Add(
+            someTriangles[trianglesIndex].vertices[1].position,
+            GLKVector3MultiplyScalar(
+               someTriangles[trianglesIndex].vertices[1].normal,
+               0.5));
+      someNormalLineVertices[lineVetexIndex++] =
+         someTriangles[trianglesIndex].vertices[2].position;
+      someNormalLineVertices[lineVetexIndex++] =
+         GLKVector3Add(
+            someTriangles[trianglesIndex].vertices[2].position,
+            GLKVector3MultiplyScalar(
+               someTriangles[trianglesIndex].vertices[2].normal,
+               0.5));
+   }
+   
+   // Add a line to indicate light direction
+   someNormalLineVertices[lineVetexIndex++] =
+      lightPosition;
+      
+   someNormalLineVertices[lineVetexIndex] = GLKVector3Make(
+      0.0,
+      0.0,
+      -0.5);
+}
+
+- (void)updateNormals
+{
+   if(self.shouldUseFaceNormals)
+   {  // Use face normal vectors to produce facets effect
+      // Lighting Step 3
+      SceneTrianglesUpdateFaceNormals(triangles);
+   }
+   else
+   {  // Interpolate normal vectors for smooth rounded effect
+      // Lighting Step 3
+      SceneTrianglesUpdateVertexNormals(triangles);
+   }
+      
+   // Reinitialize the vertex buffer containing vertices to draw
+    [self.vertexBuffer reinitWithAttribStride:sizeof(SceneVertex)
+                             numberOfVertices:sizeof(triangles) / sizeof(SceneVertex)
+                                        bytes:triangles];
+}
 
 @end

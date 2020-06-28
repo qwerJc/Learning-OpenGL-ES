@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  usage:缓存的处理方式（GL_STATIC_DRAW：缓存内容不易改变，可复制到GPU控制的内存中｜GL_DYNAMIC_DRAW：缓存中数据会频繁改变）
  */
 - (id)initWithAttribStride:(GLsizeiptr)stride
-          numberOfVertices:(GLsizei)cout
+          numberOfVertices:(GLsizei)count
                      bytes:(const GLvoid *)dataPtr
                      usage:(GLenum)usage;
 
@@ -53,6 +53,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)drawArrayWithMode:(GLenum)mode
          startVertexIndex:(GLint)first
          numberOfVertices:(GLsizei)count;
+
+/**
+ 加载receiver存储的数据
+ */
+- (void)reinitWithAttribStride:(GLsizeiptr)stride
+              numberOfVertices:(GLsizei)count
+                         bytes:(const GLvoid *)dataPtr;
 @end
 
 NS_ASSUME_NONNULL_END
