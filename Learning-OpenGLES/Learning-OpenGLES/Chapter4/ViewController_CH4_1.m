@@ -52,8 +52,8 @@ static const SceneVertex vertexI = {{ 0.5, -0.5, -0.5}, {0.0, 0.0, 1.0}};
 @property (strong, nonatomic) AGLKVertexAttribArrayBuffer *extraBuffer;
 
 @property (nonatomic) GLfloat centerVertexHeight; // 三角形中心的高度
-@property (nonatomic) BOOL shouldUseFaceNormals;
-@property (nonatomic) BOOL shouldDrawNormals;
+@property (nonatomic) BOOL shouldUseFaceNormals; // 平面法向量
+@property (nonatomic) BOOL shouldDrawNormals; // 是否显示法向量
 
 @end
 
@@ -140,7 +140,7 @@ GLKVector3 SceneVector3UnitNormal(
        modelViewMatrix = GLKMatrix4Translate(
           modelViewMatrix,
           0.0f, 0.0f, 0.25f);
-          
+
        self.baseEffect.transform.modelviewMatrix = modelViewMatrix;
        self.extraEffect.transform.modelviewMatrix = modelViewMatrix;
     }
@@ -191,6 +191,74 @@ GLKVector3 SceneVector3UnitNormal(
     [self.vertexBuffer drawArrayWithMode:GL_TRIANGLES
                         startVertexIndex:0
                         numberOfVertices:sizeof(triangles)/sizeof(SceneVertex)];
+    
+    if(self.shouldDrawNormals)
+    {
+        [self drawNormals];
+    }
+}
+
+#pragma mark - Normals（法向量）
+
+- (void)updateNormals
+{
+   if(self.shouldUseFaceNormals)
+   {
+       // 使用平面法向量 产生一个多面体的外观
+       // 每个顶点有相同的法向量，因此看过去一个面是平的
+      SceneTrianglesUpdateFaceNormals(triangles);
+   }
+   else
+   {  // 使用 平均法向量 产生一个圆锥体
+       // 顶点法向量为 所有三角形法向量的平均值
+      SceneTrianglesUpdateVertexNormals(triangles);
+   }
+      
+   // Reinitialize the vertex buffer containing vertices to draw
+    [self.vertexBuffer reinitWithAttribStride:sizeof(SceneVertex)
+                             numberOfVertices:sizeof(triangles) / sizeof(SceneVertex)
+                                        bytes:triangles];
+}
+
+// 绘制法向量
+- (void)drawNormals
+{
+   GLKVector3  normalLineVertices[NUM_LINE_VERTS];
+   
+   // calculate all 50 vertices based on 8 triangles
+   SceneTrianglesNormalLinesUpdate(triangles,
+      GLKVector3MakeWithArray(self.baseEffect.light0.position.v),
+      normalLineVertices);
+
+   [self.extraBuffer reinitWithAttribStride:sizeof(GLKVector3)
+      numberOfVertices:NUM_LINE_VERTS
+      bytes:normalLineVertices];
+   
+    [self.extraBuffer prepareToDrawWithAttrib:GLKVertexAttribPosition
+                          numberOfCoordinates:3
+                                         data:0
+                                 shouldEnable:YES];
+   
+   // Draw lines to represent normal vectors and light direction
+   // Don't use light so that line color shows
+   self.extraEffect.useConstantColor = GL_TRUE;
+   self.extraEffect.constantColor =
+      GLKVector4Make(0.0, 1.0, 0.0, 1.0); // Green
+       
+   [self.extraEffect prepareToDraw];
+   
+   [self.extraBuffer drawArrayWithMode:GL_LINES
+      startVertexIndex:0
+      numberOfVertices:NUM_NORMAL_LINE_VERTS];
+      
+   self.extraEffect.constantColor =
+      GLKVector4Make(1.0, 1.0, 0.0, 1.0); // Yellow
+       
+   [self.extraEffect prepareToDraw];
+   
+   [self.extraBuffer drawArrayWithMode:GL_LINES
+      startVertexIndex:NUM_NORMAL_LINE_VERTS
+      numberOfVertices:(NUM_LINE_VERTS - NUM_NORMAL_LINE_VERTS)];
 }
 
 #pragma mark - UI
@@ -198,13 +266,13 @@ GLKVector3 SceneVector3UnitNormal(
     UISwitch *switch1 = [[UISwitch alloc] init];
     switch1.backgroundColor = [UIColor redColor];
     switch1.center = CGPointMake(100, 80);
-    [switch1 addTarget:self action:@selector(onSwith1Action) forControlEvents:UIControlEventTouchUpInside];
+    [switch1 addTarget:self action:@selector(onSwith1Action:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:switch1];
     
     UISwitch *switch2 = [[UISwitch alloc] init];
     switch2.backgroundColor = [UIColor redColor];
     switch2.center = CGPointMake(200, 80);
-    [switch2 addTarget:self action:@selector(onSwith2Action) forControlEvents:UIControlEventTouchUpInside];
+    [switch2 addTarget:self action:@selector(onSwith2Action:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:switch2];
     
     UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake(20, 120, 330, 50)];
@@ -212,12 +280,12 @@ GLKVector3 SceneVector3UnitNormal(
     [self.view addSubview:slider];
 }
 
-- (void)onSwith1Action {
-    
+- (void)onSwith1Action:(UISwitch *)sender {
+    self.shouldUseFaceNormals = sender.isOn;
 }
 
-- (void)onSwith2Action {
-    
+- (void)onSwith2Action:(UISwitch *)sender {
+    self.shouldDrawNormals = sender.isOn;
 }
 
 - (void)sliderChange:(UISlider *)sender {
@@ -239,6 +307,16 @@ GLKVector3 SceneVector3UnitNormal(
     triangles[5] = SceneTriangleMake(newVertexE, vertexF, vertexH);
     
     [self updateNormals];
+}
+
+- (void)setShouldUseFaceNormals:(BOOL)aValue
+{
+   if(aValue != _shouldUseFaceNormals)
+   {
+      _shouldUseFaceNormals = aValue;
+      
+      [self updateNormals];
+   }
 }
 
 #pragma mark - 新增
@@ -413,23 +491,5 @@ static  void SceneTrianglesNormalLinesUpdate(
       -0.5);
 }
 
-- (void)updateNormals
-{
-   if(self.shouldUseFaceNormals)
-   {  // Use face normal vectors to produce facets effect
-      // Lighting Step 3
-      SceneTrianglesUpdateFaceNormals(triangles);
-   }
-   else
-   {  // Interpolate normal vectors for smooth rounded effect
-      // Lighting Step 3
-      SceneTrianglesUpdateVertexNormals(triangles);
-   }
-      
-   // Reinitialize the vertex buffer containing vertices to draw
-    [self.vertexBuffer reinitWithAttribStride:sizeof(SceneVertex)
-                             numberOfVertices:sizeof(triangles) / sizeof(SceneVertex)
-                                        bytes:triangles];
-}
 
 @end
