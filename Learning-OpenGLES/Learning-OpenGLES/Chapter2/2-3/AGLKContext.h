@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 // 设置在上下文的帧缓存中每个像素颜色为clearColor
 // 内部通过调用 glClear()来实现
 - (void)clear:(GLbitfield)mask;
+
+/**第五章新增：*/
+- (void)enable:(GLenum)capability;
+- (void)disable:(GLenum)capability;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -60,6 +60,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)reinitWithAttribStride:(GLsizeiptr)stride
               numberOfVertices:(GLsizei)count
                          bytes:(const GLvoid *)dataPtr;
+
+#pragma mark - ch5新增
+/**
+ 绘制顶点，使用从每个开启属性的缓存指针收集的数据
+ 其实内部调用 glDrawArrays() 函数
+ */
++ (void)drawPreparedArraysWithMode:(GLenum)mode
+                  startVertexIndex:(GLint)first
+                  numberOfVertices:(GLsizei)count;
 @end
 
 NS_ASSUME_NONNULL_END

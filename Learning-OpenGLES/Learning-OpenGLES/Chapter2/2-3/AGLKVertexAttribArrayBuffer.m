@@ -97,4 +97,11 @@
                  dataPtr,          // Address of bytes to copy
                  GL_DYNAMIC_DRAW);
 }
+
+#pragma mark - ch5新增
++ (void)drawPreparedArraysWithMode:(GLenum)mode
+                  startVertexIndex:(GLint)first
+                  numberOfVertices:(GLsizei)count {
+    glDrawArrays(mode, first, count); // Step 6
+}
 @end

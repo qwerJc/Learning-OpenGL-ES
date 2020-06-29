@@ -33,4 +33,12 @@
     glClear(mask);
 }
 
+- (void)enable:(GLenum)capability {
+    glEnable(capability);
+}
+
+- (void)disable:(GLenum)capability {
+   glDisable(capability);
+}
+
 @end

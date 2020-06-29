@@ -30,6 +30,8 @@
 		3299ACFA24A5B796003FB104 /* AGLKTextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3299ACF924A5B796003FB104 /* AGLKTextureLoader.m */; };
 		3299ACFD24A63AF4003FB104 /* ViewController_CH3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3299ACFC24A63AF4003FB104 /* ViewController_CH3_2.m */; };
 		32A78DEB24A30788008D937C /* AGLKContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A78DEA24A30788008D937C /* AGLKContext.m */; };
+		32BBBB3C24A98AC2001047D7 /* ViewController_CH5_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BBBB3B24A98AC2001047D7 /* ViewController_CH5_1.m */; };
+		32BBBB3E24A98AC9001047D7 /* Earth512x256.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32BBBB3D24A98AC9001047D7 /* Earth512x256.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,10 @@
 		3299ACFC24A63AF4003FB104 /* ViewController_CH3_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH3_2.m; sourceTree = "<group>"; };
 		32A78DE924A30788008D937C /* AGLKContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKContext.h; sourceTree = "<group>"; };
 		32A78DEA24A30788008D937C /* AGLKContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKContext.m; sourceTree = "<group>"; };
+		32BBBB3A24A98AC2001047D7 /* ViewController_CH5_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH5_1.h; sourceTree = "<group>"; };
+		32BBBB3B24A98AC2001047D7 /* ViewController_CH5_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH5_1.m; sourceTree = "<group>"; };
+		32BBBB3D24A98AC9001047D7 /* Earth512x256.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Earth512x256.jpg; sourceTree = "<group>"; };
+		32BBBB3F24A98AD2001047D7 /* sphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sphere.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,9 @@
 				32061627249DCCEE0047B17D /* Chapter2 */,
 				3225CB92249FA7DF00FB2018 /* Chapter3 */,
 				328D41BF24A7620C00240396 /* Chapter4 */,
+				32BBBB3924A98A93001047D7 /* Chapter5 */,
+				32BBBB3824A98A8D001047D7 /* Chapter6 */,
+				32BBBB3724A98A75001047D7 /* Chapter7 */,
 				32061614249DCC5B0047B17D /* Main.storyboard */,
 				32061617249DCC600047B17D /* Assets.xcassets */,
 				32061619249DCC600047B17D /* LaunchScreen.storyboard */,
@@ -254,6 +263,47 @@
 			path = "2-3";
 			sourceTree = "<group>";
 		};
+		32BBBB3724A98A75001047D7 /* Chapter7 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chapter7;
+			sourceTree = "<group>";
+		};
+		32BBBB3824A98A8D001047D7 /* Chapter6 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chapter6;
+			sourceTree = "<group>";
+		};
+		32BBBB3924A98A93001047D7 /* Chapter5 */ = {
+			isa = PBXGroup;
+			children = (
+				32BBBB4124A99D7F001047D7 /* 5-4 */,
+				32BBBB4024A99898001047D7 /* 5-1 &  5-2 */,
+			);
+			path = Chapter5;
+			sourceTree = "<group>";
+		};
+		32BBBB4024A99898001047D7 /* 5-1 &  5-2 */ = {
+			isa = PBXGroup;
+			children = (
+				32BBBB3D24A98AC9001047D7 /* Earth512x256.jpg */,
+				32BBBB3F24A98AD2001047D7 /* sphere.h */,
+				32BBBB3A24A98AC2001047D7 /* ViewController_CH5_1.h */,
+				32BBBB3B24A98AC2001047D7 /* ViewController_CH5_1.m */,
+			);
+			path = "5-1 &  5-2";
+			sourceTree = "<group>";
+		};
+		32BBBB4124A99D7F001047D7 /* 5-4 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "5-4";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,6 +364,7 @@
 				3206161B249DCC600047B17D /* LaunchScreen.storyboard in Resources */,
 				3225CB9924A0F27900FB2018 /* img1-1.png in Resources */,
 				32061618249DCC600047B17D /* Assets.xcassets in Resources */,
+				32BBBB3E24A98AC9001047D7 /* Earth512x256.jpg in Resources */,
 				32061616249DCC5B0047B17D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +391,7 @@
 				3283CF4424A4B992008BA71B /* ViewController_CH2_3.m in Sources */,
 				328D41C524A7624A00240396 /* ViewController_CH4_1.m in Sources */,
 				32061610249DCC5B0047B17D /* SceneDelegate.m in Sources */,
+				32BBBB3C24A98AC2001047D7 /* ViewController_CH5_1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
