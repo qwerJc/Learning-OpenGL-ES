@@ -48,7 +48,7 @@
                                                                  error:NULL];
     self.baseEffect.texture2d0.name = textureInfo.name;
     self.baseEffect.texture2d0.target = textureInfo.target;
-    
+
     [(AGLKContext *)view.context setClearColor:GLKVector4Make(0.f, 0.f, 0.f, 1.f)];
     
     self.vertexPositionBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:(3*sizeof(GLfloat))

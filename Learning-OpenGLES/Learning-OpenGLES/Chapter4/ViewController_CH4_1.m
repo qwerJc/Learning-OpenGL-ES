@@ -132,14 +132,9 @@ GLKVector3 SceneVector3UnitNormal(
     
     /*************** 场景旋转 **************/
     {  // Comment out this block to render the scene top down
-       GLKMatrix4 modelViewMatrix = GLKMatrix4MakeRotation(
-          GLKMathDegreesToRadians(-60.0f), 1.0f, 0.0f, 0.0f);
-       modelViewMatrix = GLKMatrix4Rotate(
-          modelViewMatrix,
-          GLKMathDegreesToRadians(-30.0f), 0.0f, 0.0f, 1.0f);
-       modelViewMatrix = GLKMatrix4Translate(
-          modelViewMatrix,
-          0.0f, 0.0f, 0.25f);
+       GLKMatrix4 modelViewMatrix = GLKMatrix4MakeRotation(GLKMathDegreesToRadians(-60.0f), 1.0f, 0.0f, 0.0f);
+       modelViewMatrix = GLKMatrix4Rotate( modelViewMatrix, GLKMathDegreesToRadians(-30.0f), 0.0f, 0.0f, 1.0f);
+       modelViewMatrix = GLKMatrix4Translate( modelViewMatrix, 0.0f, 0.0f, 0.25f);
 
        self.baseEffect.transform.modelviewMatrix = modelViewMatrix;
        self.extraEffect.transform.modelviewMatrix = modelViewMatrix;

@@ -32,6 +32,7 @@
 		32A78DEB24A30788008D937C /* AGLKContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A78DEA24A30788008D937C /* AGLKContext.m */; };
 		32BBBB3C24A98AC2001047D7 /* ViewController_CH5_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BBBB3B24A98AC2001047D7 /* ViewController_CH5_1.m */; };
 		32BBBB3E24A98AC9001047D7 /* Earth512x256.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32BBBB3D24A98AC9001047D7 /* Earth512x256.jpg */; };
+		32BBBB4424A99EBF001047D7 /* ViewController_CH5_4.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BBBB4324A99EBF001047D7 /* ViewController_CH5_4.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,9 @@
 		32BBBB3B24A98AC2001047D7 /* ViewController_CH5_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH5_1.m; sourceTree = "<group>"; };
 		32BBBB3D24A98AC9001047D7 /* Earth512x256.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Earth512x256.jpg; sourceTree = "<group>"; };
 		32BBBB3F24A98AD2001047D7 /* sphere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sphere.h; sourceTree = "<group>"; };
+		32BBBB4224A99EBE001047D7 /* ViewController_CH5_4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH5_4.h; sourceTree = "<group>"; };
+		32BBBB4324A99EBF001047D7 /* ViewController_CH5_4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH5_4.m; sourceTree = "<group>"; };
+		32BBBB4524A99ED5001047D7 /* lowPolyAxesAndModels2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lowPolyAxesAndModels2.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +304,9 @@
 		32BBBB4124A99D7F001047D7 /* 5-4 */ = {
 			isa = PBXGroup;
 			children = (
+				32BBBB4524A99ED5001047D7 /* lowPolyAxesAndModels2.h */,
+				32BBBB4224A99EBE001047D7 /* ViewController_CH5_4.h */,
+				32BBBB4324A99EBF001047D7 /* ViewController_CH5_4.m */,
 			);
 			path = "5-4";
 			sourceTree = "<group>";
@@ -385,6 +392,7 @@
 				32A78DEB24A30788008D937C /* AGLKContext.m in Sources */,
 				328D41BE24A74C3400240396 /* ViewController_CH3_3.m in Sources */,
 				3206160D249DCC5B0047B17D /* AppDelegate.m in Sources */,
+				32BBBB4424A99EBF001047D7 /* ViewController_CH5_4.m in Sources */,
 				32061636249DD5680047B17D /* GLKViewController+BtnBack.m in Sources */,
 				3225CB9724A0EFFC00FB2018 /* ViewController_CH3_1.m in Sources */,
 				3206161E249DCC600047B17D /* main.m in Sources */,

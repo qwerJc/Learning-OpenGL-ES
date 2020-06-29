@@ -18,6 +18,7 @@
 #import "ViewController_CH4_1.h"
 
 #import "ViewController_CH5_1.h"
+#import "ViewController_CH5_4.h"
 
 @interface ViewController ()
 
@@ -167,9 +168,9 @@
     
     UIButton *btn2 = [[UIButton alloc] initWithFrame:CGRectMake(100, 300.f, 80, 40)];
     btn2.backgroundColor = [UIColor redColor];
-    [btn2 setTitle:@"Ch5-2" forState:UIControlStateNormal];
+    [btn2 setTitle:@"Ch5-4" forState:UIControlStateNormal];
     [btn2 addTarget:self
-             action:@selector(onShowChapter5_2)
+             action:@selector(onShowChapter5_4)
    forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn2];
 }
@@ -182,11 +183,11 @@
                      completion:^{}];
 }
 
-- (void)onShowChapter5_2 {
-//    ViewController_CH4_1 *vc = [[ViewController_CH4_1 alloc] init];
-//    vc.modalPresentationStyle = 0;
-//    [self presentViewController:vc
-//                       animated:YES
-//                     completion:^{}];
+- (void)onShowChapter5_4 {
+    ViewController_CH5_4 *vc = [[ViewController_CH5_4 alloc] init];
+    vc.modalPresentationStyle = 0;
+    [self presentViewController:vc
+                       animated:YES
+                     completion:^{}];
 }
 @end
