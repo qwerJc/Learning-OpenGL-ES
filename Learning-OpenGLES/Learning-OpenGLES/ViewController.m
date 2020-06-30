@@ -20,6 +20,8 @@
 #import "ViewController_CH5_1.h"
 #import "ViewController_CH5_4.h"
 
+#import "ViewController_GLSL.h"
+
 @interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 @property (strong, nonatomic) NSArray *arrData;
 @end
@@ -27,7 +29,7 @@
 @implementation ViewController
 
 - (void)createData {
-    _arrData = [NSArray arrayWithObjects:@"Ch2-1",@"Ch2-3",@"Ch2-Try",@"Ch3-1",@"Ch3-2",@"Ch4-1",@"Ch4-2",@"Ch5-1",@"Ch5-4",nil];
+    _arrData = [NSArray arrayWithObjects:@"glsl",@"Ch2-1",@"Ch2-3",@"Ch2-Try",@"Ch3-1",@"Ch3-2",@"Ch4-1",@"Ch4-2",@"Ch5-1",@"Ch5-4",nil];
 }
 
 - (void)viewDidLoad {
@@ -86,6 +88,10 @@
     
     NSString *title = _arrData[indexPath.row];
     
+    if ([title isEqualToString:@"glsl"]) {
+        [self onShowGLSL];
+    }
+    
     if ([title isEqualToString:@"Ch2-1"]) {
         [self onShowChapter2_1];
         
@@ -115,11 +121,17 @@
         
     } else if ([title isEqualToString:@"Ch5-4"]) {
         [self onShowChapter5_4];
-        
     }
 }
 
 #pragma mark - Show Chapter
+- (void)onShowGLSL {
+    ViewController_GLSL *vc = [[ViewController_GLSL alloc] init];
+    vc.modalPresentationStyle = 0;
+    [self presentViewController:vc
+                       animated:YES
+                     completion:^{}];
+}
 - (void)onShowChapter5_1 {
     ViewController_CH5_1 *vc = [[ViewController_CH5_1 alloc] init];
     vc.modalPresentationStyle = 0;
