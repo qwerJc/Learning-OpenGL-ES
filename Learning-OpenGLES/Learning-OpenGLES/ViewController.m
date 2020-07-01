@@ -31,7 +31,7 @@
 @implementation ViewController
 
 - (void)createData {
-    _arrData = [NSArray arrayWithObjects:@"glsl",@"Ch2-1",@"Ch2-3",@"Ch2-Try",@"Ch3-1",@"Ch3-2",@"Ch4-1",@"Ch4-2",@"Ch5-1",@"Ch5-4",nil];
+    _arrData = [NSArray arrayWithObjects:@"glsl",@"Ch6-1",@"Ch2-1",@"Ch2-3",@"Ch2-Try",@"Ch3-1",@"Ch3-2",@"Ch4-1",@"Ch4-2",@"Ch5-1",@"Ch5-4",nil];
 }
 
 - (void)viewDidLoad {
@@ -92,6 +92,8 @@
     
     if ([title isEqualToString:@"glsl"]) {
         [self onShowGLSL];
+    } else if ([title isEqualToString:@"Ch6-1"]) {
+        [self onShowChapter6_1];
     }
     
     if ([title isEqualToString:@"Ch2-1"]) {
@@ -127,6 +129,14 @@
 }
 
 #pragma mark - Show Chapter
+- (void)onShowChapter6_1 {
+    ViewController_CH6_1 *vc = [[ViewController_CH6_1 alloc] init];
+    vc.modalPresentationStyle = 0;
+    [self presentViewController:vc
+                       animated:YES
+                     completion:^{}];
+}
+
 - (void)onShowGLSL {
     ViewController_GLSL *vc = [[ViewController_GLSL alloc] init];
     vc.modalPresentationStyle = 0;
@@ -189,26 +199,6 @@
 
 }
 
-<<<<<<< HEAD
-#pragma mark - Chapter 5
-- (void)createChapter6Btn {
-    UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(10, 370.f, 80, 40)];
-    btn1.backgroundColor = [UIColor redColor];
-    [btn1 setTitle:@"Ch6-1" forState:UIControlStateNormal];
-    [btn1 addTarget:self
-             action:@selector(onShowChapter6_1)
-   forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn1];
-}
-
-- (void)onShowChapter6_1 {
-    ViewController_CH6_1 *vc = [[ViewController_CH6_1 alloc] init];
-    vc.modalPresentationStyle = 0;
-    [self presentViewController:vc
-                       animated:YES
-                     completion:^{}];
-}
-=======
 - (void)onShowChapter2_3 {
     ViewController_CH2_3 *vc = [[ViewController_CH2_3 alloc] init];
     vc.modalPresentationStyle = 0;
@@ -222,6 +212,4 @@
     [self presentViewController:vc animated:YES completion:^{}];
 }
 
-
->>>>>>> abdad1aa4b0a4f6c8d68421aafa202572e1dd1c3
 @end

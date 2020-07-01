@@ -95,6 +95,41 @@
     [self.vertexAttributeBuffer prepareToDrawWithAttrib:GLKVertexAttribPosition
                                     numberOfCoordinates:3
                                                    data:offsetof(SceneMeshVertex, position)
-                                           shouldEnable:<#(BOOL)#>]
+                                           shouldEnable:YES];
+    
+    [self.vertexAttributeBuffer prepareToDrawWithAttrib:GLKVertexAttribNormal
+                                    numberOfCoordinates:3
+                                                   data:offsetof(SceneMeshVertex, normal)
+                                           shouldEnable:YES];
+    
+    [self.vertexAttributeBuffer prepareToDrawWithAttrib:GLKVertexAttribTexCoord0
+                                    numberOfCoordinates:2
+                                                   data:offsetof(SceneMeshVertex, normal)
+                                           shouldEnable:YES];
+    
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBufferID);
+}
+
+- (void)drawUnidexedWithMode:(GLenum)mode
+            startVertexIndex:(GLint)first
+            numberOfVertices:(GLsizei)count {
+    
+    [self.vertexAttributeBuffer drawArrayWithMode:mode
+                                 startVertexIndex:first
+                                 numberOfVertices:count];
+}
+
+- (void)makeDynamicAndUpdateWithVertices:(SceneMeshVertex *)someVerts numberOfVertices:(size_t)count {
+    if (self.vertexAttributeBuffer) {
+        [self.vertexAttributeBuffer reinitWithAttribStride:sizeof(SceneMeshVertex)
+                                          numberOfVertices:count
+                                                     bytes:someVerts];
+    } else {
+        
+        self.vertexAttributeBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneMeshVertex)
+                                                                              numberOfVertices:count
+                                                                                         bytes:someVerts
+                                                                                         usage:GL_DYNAMIC_DRAW];
+    }
 }
 @end

@@ -23,19 +23,18 @@
 		3225CB9724A0EFFC00FB2018 /* ViewController_CH3_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3225CB9624A0EFFC00FB2018 /* ViewController_CH3_1.m */; };
 		3225CB9924A0F27900FB2018 /* img1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3225CB9824A0F27900FB2018 /* img1-1.png */; };
 		324C8F1524A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 324C8F1424A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m */; };
-
 		326B262024AAC67A000781FB /* ViewController_CH6_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B261F24AAC67A000781FB /* ViewController_CH6_1.m */; };
 		326B262324AAC786000781FB /* SceneCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B262224AAC786000781FB /* SceneCar.m */; };
 		326B262924AAC7F8000781FB /* SceneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B262824AAC7F8000781FB /* SceneModel.m */; };
 		326B262C24AAC8C0000781FB /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B262B24AAC8C0000781FB /* SceneMesh.m */; };
 		327DD1E724AB7F3300486529 /* ViewController_GLSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 327DD1E624AB7F3300486529 /* ViewController_GLSL.m */; };
-
 		3283CF4424A4B992008BA71B /* ViewController_CH2_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 3283CF4324A4B992008BA71B /* ViewController_CH2_3.m */; };
 		328D41BE24A74C3400240396 /* ViewController_CH3_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 328D41BD24A74C3400240396 /* ViewController_CH3_3.m */; };
 		328D41C524A7624A00240396 /* ViewController_CH4_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 328D41C424A7624A00240396 /* ViewController_CH4_1.m */; };
 		3299ACF524A58E3B003FB104 /* ViewController_CH2_Practice.m in Sources */ = {isa = PBXBuildFile; fileRef = 3299ACF424A58E3B003FB104 /* ViewController_CH2_Practice.m */; };
 		3299ACFA24A5B796003FB104 /* AGLKTextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3299ACF924A5B796003FB104 /* AGLKTextureLoader.m */; };
 		3299ACFD24A63AF4003FB104 /* ViewController_CH3_2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3299ACFC24A63AF4003FB104 /* ViewController_CH3_2.m */; };
+		32A332CB24AC490500D8F571 /* SceneCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A332CA24AC490500D8F571 /* SceneCarModel.m */; };
 		32A78DEB24A30788008D937C /* AGLKContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A78DEA24A30788008D937C /* AGLKContext.m */; };
 		32BBBB3C24A98AC2001047D7 /* ViewController_CH5_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BBBB3B24A98AC2001047D7 /* ViewController_CH5_1.m */; };
 		32BBBB3E24A98AC9001047D7 /* Earth512x256.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 32BBBB3D24A98AC9001047D7 /* Earth512x256.jpg */; };
@@ -90,6 +89,9 @@
 		3299ACF924A5B796003FB104 /* AGLKTextureLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKTextureLoader.m; sourceTree = "<group>"; };
 		3299ACFB24A63AF4003FB104 /* ViewController_CH3_2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH3_2.h; sourceTree = "<group>"; };
 		3299ACFC24A63AF4003FB104 /* ViewController_CH3_2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH3_2.m; sourceTree = "<group>"; };
+		32A332C924AC490500D8F571 /* SceneCarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneCarModel.h; sourceTree = "<group>"; };
+		32A332CA24AC490500D8F571 /* SceneCarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneCarModel.m; sourceTree = "<group>"; };
+		32A332CC24AC498D00D8F571 /* bumperCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bumperCar.h; sourceTree = "<group>"; };
 		32A78DE924A30788008D937C /* AGLKContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKContext.h; sourceTree = "<group>"; };
 		32A78DEA24A30788008D937C /* AGLKContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKContext.m; sourceTree = "<group>"; };
 		32BBBB3A24A98AC2001047D7 /* ViewController_CH5_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH5_1.h; sourceTree = "<group>"; };
@@ -272,6 +274,23 @@
 			path = "3-2";
 			sourceTree = "<group>";
 		};
+		32A332C724AC41CB00D8F571 /* Rink */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Rink;
+			sourceTree = "<group>";
+		};
+		32A332C824AC48F000D8F571 /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				32A332CC24AC498D00D8F571 /* bumperCar.h */,
+				32A332C924AC490500D8F571 /* SceneCarModel.h */,
+				32A332CA24AC490500D8F571 /* SceneCarModel.m */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
 		32A78DE724A306F6008D937C /* 2-1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,12 +325,14 @@
 			children = (
 				326B261E24AAC67A000781FB /* ViewController_CH6_1.h */,
 				326B261F24AAC67A000781FB /* ViewController_CH6_1.m */,
+				326B262724AAC7F8000781FB /* SceneModel.h */,
+				326B262824AAC7F8000781FB /* SceneModel.m */,
+				32A332C824AC48F000D8F571 /* Car */,
+				32A332C724AC41CB00D8F571 /* Rink */,
 				326B262124AAC786000781FB /* SceneCar.h */,
 				326B262224AAC786000781FB /* SceneCar.m */,
 				326B262A24AAC8C0000781FB /* SceneMesh.h */,
 				326B262B24AAC8C0000781FB /* SceneMesh.m */,
-				326B262724AAC7F8000781FB /* SceneModel.h */,
-				326B262824AAC7F8000781FB /* SceneModel.m */,
 			);
 			path = Chapter6;
 			sourceTree = "<group>";
@@ -432,6 +453,7 @@
 				327DD1E724AB7F3300486529 /* ViewController_GLSL.m in Sources */,
 				32061636249DD5680047B17D /* GLKViewController+BtnBack.m in Sources */,
 				3225CB9724A0EFFC00FB2018 /* ViewController_CH3_1.m in Sources */,
+				32A332CB24AC490500D8F571 /* SceneCarModel.m in Sources */,
 				3206161E249DCC600047B17D /* main.m in Sources */,
 				326B262C24AAC8C0000781FB /* SceneMesh.m in Sources */,
 				3283CF4424A4B992008BA71B /* ViewController_CH2_3.m in Sources */,
