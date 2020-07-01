@@ -23,6 +23,10 @@
 		3225CB9724A0EFFC00FB2018 /* ViewController_CH3_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3225CB9624A0EFFC00FB2018 /* ViewController_CH3_1.m */; };
 		3225CB9924A0F27900FB2018 /* img1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3225CB9824A0F27900FB2018 /* img1-1.png */; };
 		324C8F1524A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 324C8F1424A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m */; };
+		326B262024AAC67A000781FB /* ViewController_CH6_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B261F24AAC67A000781FB /* ViewController_CH6_1.m */; };
+		326B262324AAC786000781FB /* SceneCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B262224AAC786000781FB /* SceneCar.m */; };
+		326B262924AAC7F8000781FB /* SceneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B262824AAC7F8000781FB /* SceneModel.m */; };
+		326B262C24AAC8C0000781FB /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B262B24AAC8C0000781FB /* SceneMesh.m */; };
 		3283CF4424A4B992008BA71B /* ViewController_CH2_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 3283CF4324A4B992008BA71B /* ViewController_CH2_3.m */; };
 		328D41BE24A74C3400240396 /* ViewController_CH3_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 328D41BD24A74C3400240396 /* ViewController_CH3_3.m */; };
 		328D41C524A7624A00240396 /* ViewController_CH4_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 328D41C424A7624A00240396 /* ViewController_CH4_1.m */; };
@@ -61,6 +65,14 @@
 		3225CB9824A0F27900FB2018 /* img1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img1-1.png"; sourceTree = "<group>"; };
 		324C8F1324A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKVertexAttribArrayBuffer.h; sourceTree = "<group>"; };
 		324C8F1424A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKVertexAttribArrayBuffer.m; sourceTree = "<group>"; };
+		326B261E24AAC67A000781FB /* ViewController_CH6_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH6_1.h; sourceTree = "<group>"; };
+		326B261F24AAC67A000781FB /* ViewController_CH6_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH6_1.m; sourceTree = "<group>"; };
+		326B262124AAC786000781FB /* SceneCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneCar.h; sourceTree = "<group>"; };
+		326B262224AAC786000781FB /* SceneCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneCar.m; sourceTree = "<group>"; };
+		326B262724AAC7F8000781FB /* SceneModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneModel.h; sourceTree = "<group>"; };
+		326B262824AAC7F8000781FB /* SceneModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneModel.m; sourceTree = "<group>"; };
+		326B262A24AAC8C0000781FB /* SceneMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneMesh.h; sourceTree = "<group>"; };
+		326B262B24AAC8C0000781FB /* SceneMesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
 		3283CF4224A4B992008BA71B /* ViewController_CH2_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH2_3.h; sourceTree = "<group>"; };
 		3283CF4324A4B992008BA71B /* ViewController_CH2_3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH2_3.m; sourceTree = "<group>"; };
 		328D41BC24A74C3400240396 /* ViewController_CH3_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH3_3.h; sourceTree = "<group>"; };
@@ -277,6 +289,14 @@
 		32BBBB3824A98A8D001047D7 /* Chapter6 */ = {
 			isa = PBXGroup;
 			children = (
+				326B261E24AAC67A000781FB /* ViewController_CH6_1.h */,
+				326B261F24AAC67A000781FB /* ViewController_CH6_1.m */,
+				326B262124AAC786000781FB /* SceneCar.h */,
+				326B262224AAC786000781FB /* SceneCar.m */,
+				326B262A24AAC8C0000781FB /* SceneMesh.h */,
+				326B262B24AAC8C0000781FB /* SceneMesh.m */,
+				326B262724AAC7F8000781FB /* SceneModel.h */,
+				326B262824AAC7F8000781FB /* SceneModel.m */,
 			);
 			path = Chapter6;
 			sourceTree = "<group>";
@@ -393,11 +413,15 @@
 				328D41BE24A74C3400240396 /* ViewController_CH3_3.m in Sources */,
 				3206160D249DCC5B0047B17D /* AppDelegate.m in Sources */,
 				32BBBB4424A99EBF001047D7 /* ViewController_CH5_4.m in Sources */,
+				326B262924AAC7F8000781FB /* SceneModel.m in Sources */,
 				32061636249DD5680047B17D /* GLKViewController+BtnBack.m in Sources */,
 				3225CB9724A0EFFC00FB2018 /* ViewController_CH3_1.m in Sources */,
 				3206161E249DCC600047B17D /* main.m in Sources */,
+				326B262C24AAC8C0000781FB /* SceneMesh.m in Sources */,
 				3283CF4424A4B992008BA71B /* ViewController_CH2_3.m in Sources */,
+				326B262024AAC67A000781FB /* ViewController_CH6_1.m in Sources */,
 				328D41C524A7624A00240396 /* ViewController_CH4_1.m in Sources */,
+				326B262324AAC786000781FB /* SceneCar.m in Sources */,
 				32061610249DCC5B0047B17D /* SceneDelegate.m in Sources */,
 				32BBBB3C24A98AC2001047D7 /* ViewController_CH5_1.m in Sources */,
 			);

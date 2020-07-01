@@ -20,6 +20,8 @@
 #import "ViewController_CH5_1.h"
 #import "ViewController_CH5_4.h"
 
+#import "ViewController_CH6_1.h"
+
 @interface ViewController ()
 
 @end
@@ -185,6 +187,25 @@
 
 - (void)onShowChapter5_4 {
     ViewController_CH5_4 *vc = [[ViewController_CH5_4 alloc] init];
+    vc.modalPresentationStyle = 0;
+    [self presentViewController:vc
+                       animated:YES
+                     completion:^{}];
+}
+
+#pragma mark - Chapter 5
+- (void)createChapter6Btn {
+    UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(10, 370.f, 80, 40)];
+    btn1.backgroundColor = [UIColor redColor];
+    [btn1 setTitle:@"Ch6-1" forState:UIControlStateNormal];
+    [btn1 addTarget:self
+             action:@selector(onShowChapter6_1)
+   forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn1];
+}
+
+- (void)onShowChapter6_1 {
+    ViewController_CH6_1 *vc = [[ViewController_CH6_1 alloc] init];
     vc.modalPresentationStyle = 0;
     [self presentViewController:vc
                        animated:YES
