@@ -88,7 +88,7 @@ static const SceneVertex vertices[] =
         //
     glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
     
-    // 【STEP 3】 复制应用的顶点数据到当前上下文所绑定的顶点缓存中
+    // 【STEP 3】 （为绑定的缓存分配空间并初始化）复制应用的顶点数据到当前上下文所绑定的顶点缓存中
     //    glBufferData(
     //      GL_ARRAY_BUFFER,  // 指定 更新当前上下文时 所绑定的是哪一个缓存
     //      sizeof(vertices), // 要复制进缓存的字节数量

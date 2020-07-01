@@ -14,6 +14,9 @@
 #import "sphere.h"
 
 @interface ViewController_CH5_1 ()
+{
+    CGFloat rotateY;
+}
 @property (strong, nonatomic) GLKBaseEffect *baseEffect;  // 实例指针
 @property (strong, nonatomic) AGLKVertexAttribArrayBuffer *vertexPositionBuffer;
 @property (strong, nonatomic) AGLKVertexAttribArrayBuffer *vertexNormalBuffer;
@@ -25,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addBtnBackOnView:self.view];
+    [self createUI];
+    rotateY = 1.f;
     // Do any additional setup after loading the view.
     
     GLKView *view = (GLKView *)self.view;
@@ -96,11 +101,28 @@
     const GLfloat aspectRatio = (GLfloat)view.drawableWidth/(GLfloat)view.drawableHeight;
     // 这里通过 GLKMatrix4MakeScale 创建了一个基础的变换矩阵（transformation matrix）
     // 三个参数分别改变坐标系三个轴的相对单位长度，设置为1.f意味没有变化。Y轴设置为横纵比用于缩放Y轴以抵消拉伸效果
-    self.baseEffect.transform.projectionMatrix = GLKMatrix4MakeScale(1.f, aspectRatio, 1.f);
+    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeScale(1.f, aspectRatio, 1.f);
+    
+    // 设置y轴旋转
+    modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, rotateY, 0, 1, 0);
+    self.baseEffect.transform.projectionMatrix = modelViewMatrix;
     
     [AGLKVertexAttribArrayBuffer drawPreparedArraysWithMode:GL_TRIANGLES
                                            startVertexIndex:0
                                            numberOfVertices:sphereNumVerts];
     
+}
+
+#pragma mark - UI
+- (void)createUI {
+    UISlider *slider1 = [[UISlider alloc] initWithFrame:CGRectMake(50, 500, 300, 50)];
+    slider1.backgroundColor = [UIColor whiteColor];
+    [slider1 setValue:0.5f];
+    [slider1 addTarget:self action:@selector(translateY:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:slider1];
+}
+
+- (void)translateY:(UISlider *)slider {
+    rotateY = slider.value*M_PI*2;
 }
 @end
