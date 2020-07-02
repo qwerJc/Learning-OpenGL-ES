@@ -49,9 +49,9 @@
     for (size_t i=0; i<coutPositions; i++) {
         SceneMeshVertex currentVertex;
         
-        currentVertex.position.x = someIndices[i*3 + 0];
-        currentVertex.position.y = someIndices[i*3 + 1];
-        currentVertex.position.z = someIndices[i*3 + 2];
+        currentVertex.position.x = somePositions[i*3 + 0];
+        currentVertex.position.y = somePositions[i*3 + 1];
+        currentVertex.position.z = somePositions[i*3 + 2];
         
         currentVertex.normal.x = someNormals[i*3 + 0];
         currentVertex.normal.y = someNormals[i*3 + 1];

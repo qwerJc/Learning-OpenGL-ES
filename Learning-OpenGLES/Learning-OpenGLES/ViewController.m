@@ -21,6 +21,7 @@
 #import "ViewController_CH5_4.h"
 
 #import "ViewController_GLSL.h"
+#import "ViewController_Car_Test.h"
 
 #import "ViewController_CH6_1.h"
 
@@ -31,7 +32,7 @@
 @implementation ViewController
 
 - (void)createData {
-    _arrData = [NSArray arrayWithObjects:@"glsl",@"Ch6-1",@"Ch2-1",@"Ch2-3",@"Ch2-Try",@"Ch3-1",@"Ch3-2",@"Ch4-1",@"Ch4-2",@"Ch5-1",@"Ch5-4",nil];
+    _arrData = [NSArray arrayWithObjects:@"glsl",@"car-test",@"Ch6-1",@"Ch2-1",@"Ch2-3",@"Ch2-Try",@"Ch3-1",@"Ch3-2",@"Ch4-1",@"Ch4-2",@"Ch5-1",@"Ch5-4",nil];
 }
 
 - (void)viewDidLoad {
@@ -94,6 +95,8 @@
         [self onShowGLSL];
     } else if ([title isEqualToString:@"Ch6-1"]) {
         [self onShowChapter6_1];
+    } else if ([title isEqualToString:@"car-test"]) {
+        [self onShowCarTest];
     }
     
     if ([title isEqualToString:@"Ch2-1"]) {
@@ -129,6 +132,14 @@
 }
 
 #pragma mark - Show Chapter
+- (void)onShowCarTest {
+    ViewController_Car_Test *vc = [[ViewController_Car_Test alloc] init];
+    vc.modalPresentationStyle = 0;
+    [self presentViewController:vc
+                       animated:YES
+                     completion:^{}];
+}
+
 - (void)onShowChapter6_1 {
     ViewController_CH6_1 *vc = [[ViewController_CH6_1 alloc] init];
     vc.modalPresentationStyle = 0;

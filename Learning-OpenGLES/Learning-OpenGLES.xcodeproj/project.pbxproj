@@ -27,6 +27,9 @@
 		326B262324AAC786000781FB /* SceneCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B262224AAC786000781FB /* SceneCar.m */; };
 		326B262924AAC7F8000781FB /* SceneModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B262824AAC7F8000781FB /* SceneModel.m */; };
 		326B262C24AAC8C0000781FB /* SceneMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B262B24AAC8C0000781FB /* SceneMesh.m */; };
+		3279BD8824AD715400D1A1CC /* ViewController_Car_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279BD8724AD715400D1A1CC /* ViewController_Car_Test.m */; };
+		3279BD8B24AD782700D1A1CC /* Car_Test_Rink.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279BD8A24AD782700D1A1CC /* Car_Test_Rink.m */; };
+		3279BD8F24AD8E7100D1A1CC /* SceneRinkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279BD8E24AD8E7100D1A1CC /* SceneRinkModel.m */; };
 		327DD1E724AB7F3300486529 /* ViewController_GLSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 327DD1E624AB7F3300486529 /* ViewController_GLSL.m */; };
 		3283CF4424A4B992008BA71B /* ViewController_CH2_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 3283CF4324A4B992008BA71B /* ViewController_CH2_3.m */; };
 		328D41BE24A74C3400240396 /* ViewController_CH3_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 328D41BD24A74C3400240396 /* ViewController_CH3_3.m */; };
@@ -75,6 +78,13 @@
 		326B262824AAC7F8000781FB /* SceneModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneModel.m; sourceTree = "<group>"; };
 		326B262A24AAC8C0000781FB /* SceneMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneMesh.h; sourceTree = "<group>"; };
 		326B262B24AAC8C0000781FB /* SceneMesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneMesh.m; sourceTree = "<group>"; };
+		3279BD8624AD715400D1A1CC /* ViewController_Car_Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_Car_Test.h; sourceTree = "<group>"; };
+		3279BD8724AD715400D1A1CC /* ViewController_Car_Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_Car_Test.m; sourceTree = "<group>"; };
+		3279BD8924AD782700D1A1CC /* Car_Test_Rink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car_Test_Rink.h; sourceTree = "<group>"; };
+		3279BD8A24AD782700D1A1CC /* Car_Test_Rink.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car_Test_Rink.m; sourceTree = "<group>"; };
+		3279BD8C24AD828900D1A1CC /* bumperRink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bumperRink.h; sourceTree = "<group>"; };
+		3279BD8D24AD8E7100D1A1CC /* SceneRinkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneRinkModel.h; sourceTree = "<group>"; };
+		3279BD8E24AD8E7100D1A1CC /* SceneRinkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneRinkModel.m; sourceTree = "<group>"; };
 		327DD1E524AB7F3300486529 /* ViewController_GLSL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_GLSL.h; sourceTree = "<group>"; };
 		327DD1E624AB7F3300486529 /* ViewController_GLSL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_GLSL.m; sourceTree = "<group>"; };
 		3283CF4224A4B992008BA71B /* ViewController_CH2_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH2_3.h; sourceTree = "<group>"; };
@@ -197,9 +207,21 @@
 			path = Chapter3;
 			sourceTree = "<group>";
 		};
+		3279BD8524AD711D00D1A1CC /* Car-test */ = {
+			isa = PBXGroup;
+			children = (
+				3279BD8624AD715400D1A1CC /* ViewController_Car_Test.h */,
+				3279BD8724AD715400D1A1CC /* ViewController_Car_Test.m */,
+				3279BD8924AD782700D1A1CC /* Car_Test_Rink.h */,
+				3279BD8A24AD782700D1A1CC /* Car_Test_Rink.m */,
+			);
+			path = "Car-test";
+			sourceTree = "<group>";
+		};
 		327DD1E424AB7F2300486529 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				3279BD8524AD711D00D1A1CC /* Car-test */,
 				327DD1E524AB7F3300486529 /* ViewController_GLSL.h */,
 				327DD1E624AB7F3300486529 /* ViewController_GLSL.m */,
 			);
@@ -277,6 +299,9 @@
 		32A332C724AC41CB00D8F571 /* Rink */ = {
 			isa = PBXGroup;
 			children = (
+				3279BD8C24AD828900D1A1CC /* bumperRink.h */,
+				3279BD8D24AD8E7100D1A1CC /* SceneRinkModel.h */,
+				3279BD8E24AD8E7100D1A1CC /* SceneRinkModel.m */,
 			);
 			path = Rink;
 			sourceTree = "<group>";
@@ -453,7 +478,9 @@
 				327DD1E724AB7F3300486529 /* ViewController_GLSL.m in Sources */,
 				32061636249DD5680047B17D /* GLKViewController+BtnBack.m in Sources */,
 				3225CB9724A0EFFC00FB2018 /* ViewController_CH3_1.m in Sources */,
+				3279BD8F24AD8E7100D1A1CC /* SceneRinkModel.m in Sources */,
 				32A332CB24AC490500D8F571 /* SceneCarModel.m in Sources */,
+				3279BD8824AD715400D1A1CC /* ViewController_Car_Test.m in Sources */,
 				3206161E249DCC600047B17D /* main.m in Sources */,
 				326B262C24AAC8C0000781FB /* SceneMesh.m in Sources */,
 				3283CF4424A4B992008BA71B /* ViewController_CH2_3.m in Sources */,
@@ -461,6 +488,7 @@
 				328D41C524A7624A00240396 /* ViewController_CH4_1.m in Sources */,
 				326B262324AAC786000781FB /* SceneCar.m in Sources */,
 				32061610249DCC5B0047B17D /* SceneDelegate.m in Sources */,
+				3279BD8B24AD782700D1A1CC /* Car_Test_Rink.m in Sources */,
 				32BBBB3C24A98AC2001047D7 /* ViewController_CH5_1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

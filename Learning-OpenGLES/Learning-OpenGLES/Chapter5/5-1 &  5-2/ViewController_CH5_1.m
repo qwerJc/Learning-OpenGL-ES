@@ -62,7 +62,7 @@
                                                                                     usage:GL_STATIC_DRAW];
     
     self.vertexNormalBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:(3*sizeof(GLfloat))
-                                                                       numberOfVertices:sizeof(sphereVerts)/(3*sizeof(GLfloat))
+                                                                       numberOfVertices:sizeof(sphereNormals)/(3*sizeof(GLfloat))
                                                                                   bytes:sphereNormals
                                                                                   usage:GL_STATIC_DRAW];
     
