@@ -18,24 +18,28 @@ typedef struct
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SceneMesh : NSObject
-- (instancetype)initWithVertexAttributeData:(NSData *)vertexAttributes
-                                  indexData:(NSData *)indices;
 
-- (instancetype)initWithPositionCoords:(GLfloat *)somePositions
-                          normalCoords:(GLfloat *)someNormals
-                            texCoords0:(GLfloat *)someTextCoords0
-                     numberOfPositions:(size_t)coutPositions
-                              indeices:(GLushort *)someIndices
-                       numberOfIndices:(size_t)countIndices;
+- (id)initWithVertexAttributeData:(NSData *)vertexAttributes
+   indexData:(NSData *)indices;
 
+- (id)initWithPositionCoords:(const GLfloat *)somePositions
+   normalCoords:(const GLfloat *)someNormals
+   texCoords0:(const GLfloat *)someTexCoords0
+   numberOfPositions:(size_t)countPositions
+   indices:(const GLushort *)someIndices
+   numberOfIndices:(size_t)countIndices;
+   
 - (void)prepareToDraw;
 
 - (void)drawUnidexedWithMode:(GLenum)mode
-            startVertexIndex:(GLint)first
-            numberOfVertices:(GLsizei)count;
+   startVertexIndex:(GLint)first
+   numberOfVertices:(GLsizei)count;
 
-- (void)makeDynamicAndUpdateWithVertices:(SceneMeshVertex *)someVerts
-                        numberOfVertices:(size_t)count;
+- (void)makeDynamicAndUpdateWithVertices:
+   (const SceneMeshVertex *)someVerts
+   numberOfVertices:(size_t)count;
+
 @end
+
 
 NS_ASSUME_NONNULL_END

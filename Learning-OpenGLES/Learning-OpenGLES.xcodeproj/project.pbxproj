@@ -30,6 +30,7 @@
 		3279BD8824AD715400D1A1CC /* ViewController_Car_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279BD8724AD715400D1A1CC /* ViewController_Car_Test.m */; };
 		3279BD8B24AD782700D1A1CC /* Car_Test_Rink.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279BD8A24AD782700D1A1CC /* Car_Test_Rink.m */; };
 		3279BD8F24AD8E7100D1A1CC /* SceneRinkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279BD8E24AD8E7100D1A1CC /* SceneRinkModel.m */; };
+		3279BD9224ADCB9200D1A1CC /* Car_Test_Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 3279BD9124ADCB9200D1A1CC /* Car_Test_Car.m */; };
 		327DD1E724AB7F3300486529 /* ViewController_GLSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 327DD1E624AB7F3300486529 /* ViewController_GLSL.m */; };
 		3283CF4424A4B992008BA71B /* ViewController_CH2_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 3283CF4324A4B992008BA71B /* ViewController_CH2_3.m */; };
 		328D41BE24A74C3400240396 /* ViewController_CH3_3.m in Sources */ = {isa = PBXBuildFile; fileRef = 328D41BD24A74C3400240396 /* ViewController_CH3_3.m */; };
@@ -85,6 +86,8 @@
 		3279BD8C24AD828900D1A1CC /* bumperRink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bumperRink.h; sourceTree = "<group>"; };
 		3279BD8D24AD8E7100D1A1CC /* SceneRinkModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneRinkModel.h; sourceTree = "<group>"; };
 		3279BD8E24AD8E7100D1A1CC /* SceneRinkModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneRinkModel.m; sourceTree = "<group>"; };
+		3279BD9024ADCB9200D1A1CC /* Car_Test_Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car_Test_Car.h; sourceTree = "<group>"; };
+		3279BD9124ADCB9200D1A1CC /* Car_Test_Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car_Test_Car.m; sourceTree = "<group>"; };
 		327DD1E524AB7F3300486529 /* ViewController_GLSL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_GLSL.h; sourceTree = "<group>"; };
 		327DD1E624AB7F3300486529 /* ViewController_GLSL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_GLSL.m; sourceTree = "<group>"; };
 		3283CF4224A4B992008BA71B /* ViewController_CH2_3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH2_3.h; sourceTree = "<group>"; };
@@ -214,6 +217,8 @@
 				3279BD8724AD715400D1A1CC /* ViewController_Car_Test.m */,
 				3279BD8924AD782700D1A1CC /* Car_Test_Rink.h */,
 				3279BD8A24AD782700D1A1CC /* Car_Test_Rink.m */,
+				3279BD9024ADCB9200D1A1CC /* Car_Test_Car.h */,
+				3279BD9124ADCB9200D1A1CC /* Car_Test_Car.m */,
 			);
 			path = "Car-test";
 			sourceTree = "<group>";
@@ -466,6 +471,7 @@
 			files = (
 				3299ACF524A58E3B003FB104 /* ViewController_CH2_Practice.m in Sources */,
 				3299ACFA24A5B796003FB104 /* AGLKTextureLoader.m in Sources */,
+				3279BD9224ADCB9200D1A1CC /* Car_Test_Car.m in Sources */,
 				3299ACFD24A63AF4003FB104 /* ViewController_CH3_2.m in Sources */,
 				32061626249DCCDD0047B17D /* ViewController_CH2_1.m in Sources */,
 				32061613249DCC5B0047B17D /* ViewController.m in Sources */,

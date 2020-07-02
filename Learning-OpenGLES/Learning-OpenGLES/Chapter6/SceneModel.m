@@ -10,11 +10,6 @@
 #import "SceneMesh.h"
 #import "AGLKVertexAttribArrayBuffer.h"
 
-typedef struct {
-   GLKVector3 min;
-   GLKVector3 max;
-}SceneAxisAllignedBoundingBox;
-
 @interface SceneModel()
 @property (strong, nonatomic) SceneMesh *mesh;
 @property (strong, nonatomic) NSString *name;
