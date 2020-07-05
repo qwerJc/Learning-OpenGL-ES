@@ -8,24 +8,24 @@
 
 #import "SceneRinkModel.h"
 #import "SceneMesh.h"
-//#import "bumperRink.h"
+#import "bumperRink.h"
 
 @implementation SceneRinkModel
 - (instancetype)init {
-//    SceneMesh *rinkMesh = [[SceneMesh alloc] initWithPositionCoords:bumperRinkVerts
-//                                                       normalCoords:bumperRinkNormals
-//                                                         texCoords0:NULL
-//                                                  numberOfPositions:bumperRinkNumVerts
-//                                                            indices:NULL
-//                                                    numberOfIndices:0];
-//    
-//    self = [super initWithName:@"BumberRink"
-//                          mesh:rinkMesh
-//              numberOfVertices:bumperRinkNumVerts];
-//    if (self) {
-//        [self updateAlignedBoundingBoxForVertices:bumperRinkVerts
-//                                            count:bumperRinkNumVerts];
-//    }
+    SceneMesh *rinkMesh = [[SceneMesh alloc] initWithPositionCoords:bumperRinkVerts
+                                                       normalCoords:bumperRinkNormals
+                                                         texCoords0:NULL
+                                                  numberOfPositions:bumperRinkNumVerts
+                                                            indices:NULL
+                                                    numberOfIndices:0];
+
+    self = [super initWithName:@"BumberRink"
+                          mesh:rinkMesh
+              numberOfVertices:bumperRinkNumVerts];
+    if (self) {
+        [self updateAlignedBoundingBoxForVertices:bumperRinkVerts
+                                            count:bumperRinkNumVerts];
+    }
     return self;
 }
 @end

@@ -105,6 +105,8 @@
 		32A332C924AC490500D8F571 /* SceneCarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneCarModel.h; sourceTree = "<group>"; };
 		32A332CA24AC490500D8F571 /* SceneCarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneCarModel.m; sourceTree = "<group>"; };
 		32A332CC24AC498D00D8F571 /* bumperCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bumperCar.h; sourceTree = "<group>"; };
+		32A680D824B2076C0063E52D /* try-bumperRink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "try-bumperRink.h"; sourceTree = "<group>"; };
+		32A680D924B2076C0063E52D /* try-bumperCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "try-bumperCar.h"; sourceTree = "<group>"; };
 		32A78DE924A30788008D937C /* AGLKContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKContext.h; sourceTree = "<group>"; };
 		32A78DEA24A30788008D937C /* AGLKContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKContext.m; sourceTree = "<group>"; };
 		32BBBB3A24A98AC2001047D7 /* ViewController_CH5_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH5_1.h; sourceTree = "<group>"; };
@@ -213,6 +215,8 @@
 		3279BD8524AD711D00D1A1CC /* Car-test */ = {
 			isa = PBXGroup;
 			children = (
+				32A680D924B2076C0063E52D /* try-bumperCar.h */,
+				32A680D824B2076C0063E52D /* try-bumperRink.h */,
 				3279BD8624AD715400D1A1CC /* ViewController_Car_Test.h */,
 				3279BD8724AD715400D1A1CC /* ViewController_Car_Test.m */,
 				3279BD8924AD782700D1A1CC /* Car_Test_Rink.h */,

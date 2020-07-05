@@ -8,7 +8,7 @@
 
 #import "Car_Test_Car.h"
 #import "AGLKVertexAttribArrayBuffer.h"
-#import "bumperCar.h"
+#import "try-bumperCar.h"
 #import "SceneModel.h"
 
 @interface Car_Test_Car()
@@ -29,13 +29,13 @@
 
 - (void)createCarVertexData {
     self.vertexPositonBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:(3*sizeof(GLfloat))
-                                                                        numberOfVertices:sizeof(bumperCarVerts)/(3*sizeof(GLfloat))
-                                                                                   bytes:bumperCarVerts
+                                                                        numberOfVertices:sizeof(bumperCarVerts1)/(3*sizeof(GLfloat))
+                                                                                   bytes:bumperCarVerts1
                                                                                    usage:GL_STATIC_DRAW];
     
     self.vertexNormalBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:(3*sizeof(GLfloat))
-                                                                       numberOfVertices:sizeof(bumperCarNormals)/(3*sizeof(GLfloat))
-                                                                                  bytes:bumperCarNormals
+                                                                       numberOfVertices:sizeof(bumperCarNormals1)/(3*sizeof(GLfloat))
+                                                                                  bytes:bumperCarNormals1
                                                                                   usage:GL_STATIC_DRAW];
 }
 
@@ -52,7 +52,7 @@
     
     [AGLKVertexAttribArrayBuffer drawPreparedArraysWithMode:GL_TRIANGLES
                                            startVertexIndex:0
-                                           numberOfVertices:bumperCarNumVerts];
+                                           numberOfVertices:bumperCarNumVerts1];
 }
 
 - (void)drawWithBaseEffect:(GLKBaseEffect *)anEffect color:(GLKVector4)carColor {
@@ -69,8 +69,8 @@
 //                     0.0, 1.0, 0.0);
     
     // 设置材质的颜色
-    anEffect.material.diffuseColor = carColor;
-    anEffect.material.ambientColor = carColor;
+    anEffect.material.diffuseColor = carColor; // 漫反射颜色
+    anEffect.material.ambientColor = carColor; // 环境光颜色
     
     // Draw the model
     [self prepareToDraw];

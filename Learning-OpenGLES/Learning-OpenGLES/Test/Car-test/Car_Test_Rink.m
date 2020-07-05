@@ -8,7 +8,7 @@
 
 #import "Car_Test_Rink.h"
 #import "AGLKVertexAttribArrayBuffer.h"
-#import "bumperRink.h"
+#import "try-bumperRink.h"
 
 @interface Car_Test_Rink()
 @property (strong, nonatomic) AGLKVertexAttribArrayBuffer *vertexPositionBuffer;
@@ -26,13 +26,13 @@
 
 - (void)createRinkVertexData {
     self.vertexPositionBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:(3*sizeof(GLfloat))
-                                                                         numberOfVertices:sizeof(bumperRinkVerts)/(3*sizeof(GLfloat))
-                                                                                    bytes:bumperRinkVerts
+                                                                         numberOfVertices:sizeof(bumperRinkVerts1)/(3*sizeof(GLfloat))
+                                                                                    bytes:bumperRinkVerts1
                                                                                     usage:GL_STATIC_DRAW];
 
     self.vertexNormalBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:(3*sizeof(GLfloat))
-                                                                       numberOfVertices:sizeof(bumperRinkNormals)/(3*sizeof(GLfloat))
-                                                                                  bytes:bumperRinkNormals
+                                                                       numberOfVertices:sizeof(bumperRinkNormals1)/(3*sizeof(GLfloat))
+                                                                                  bytes:bumperRinkNormals1
                                                                                   usage:GL_STATIC_DRAW];
 }
 
@@ -50,6 +50,6 @@
     
     [AGLKVertexAttribArrayBuffer drawPreparedArraysWithMode:GL_TRIANGLES
                                            startVertexIndex:0
-                                           numberOfVertices:bumperRinkNumVerts];
+                                           numberOfVertices:bumperRinkNumVerts1];
 }
 @end

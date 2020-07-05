@@ -132,14 +132,12 @@
    if(nil == self.vertexAttributeBuffer &&
       0 < [self.vertexData length])
    {  // vertex attiributes haven't been sent to GPU yet
-      self.vertexAttributeBuffer =
-         [[AGLKVertexAttribArrayBuffer alloc]
-         initWithAttribStride:sizeof(SceneMeshVertex)
-         numberOfVertices:[self.vertexData length] /
-            sizeof(SceneMeshVertex)
-         bytes:[self.vertexData bytes]
-         usage:GL_STATIC_DRAW];
-      
+       self.vertexAttributeBuffer = [[AGLKVertexAttribArrayBuffer alloc] initWithAttribStride:sizeof(SceneMeshVertex)
+                                                                             numberOfVertices:[self.vertexData length] /
+                                     sizeof(SceneMeshVertex)
+                                                                                        bytes:[self.vertexData bytes]
+                                                                                        usage:GL_STATIC_DRAW];
+       
       // No longer need local data storage
       self.vertexData = nil;
    }
