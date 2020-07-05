@@ -9,10 +9,13 @@
 #import "Car_Test_Car.h"
 #import "AGLKVertexAttribArrayBuffer.h"
 #import "bumperCar.h"
+#import "SceneModel.h"
 
 @interface Car_Test_Car()
 @property (strong, nonatomic) AGLKVertexAttribArrayBuffer *vertexPositonBuffer;
 @property (strong, nonatomic) AGLKVertexAttribArrayBuffer *vertexNormalBuffer;
+
+@property (strong, nonatomic, readwrite) SceneModel *model;
 @end
 
 @implementation Car_Test_Car
@@ -50,5 +53,33 @@
     [AGLKVertexAttribArrayBuffer drawPreparedArraysWithMode:GL_TRIANGLES
                                            startVertexIndex:0
                                            numberOfVertices:bumperCarNumVerts];
+}
+
+- (void)drawWithBaseEffect:(GLKBaseEffect *)anEffect color:(GLKVector4)carColor {
+    GLKMatrix4  savedModelviewMatrix = anEffect.transform.modelviewMatrix;
+    GLKVector4  savedDiffuseColor = anEffect.material.diffuseColor;
+    GLKVector4  savedAmbientColor = anEffect.material.ambientColor;
+    
+    // Translate to the model's position
+//    anEffect.transform.modelviewMatrix = GLKMatrix4Translate(savedModelviewMatrix,position.x, position.y, position.z);
+    
+    // Rotate to match model's yaw angle (rotation about Y)
+//    anEffect.transform.modelviewMatrix =  GLKMatrix4Rotate(anEffect.transform.modelviewMatrix,
+//                     self.yawRadians,
+//                     0.0, 1.0, 0.0);
+    
+    // 设置材质的颜色
+    anEffect.material.diffuseColor = carColor;
+    anEffect.material.ambientColor = carColor;
+    
+    // Draw the model
+    [self prepareToDraw];
+    
+    [anEffect prepareToDraw];
+    
+    // Restore saved attributes
+    anEffect.transform.modelviewMatrix = savedModelviewMatrix;
+    anEffect.material.diffuseColor = savedDiffuseColor;
+    anEffect.material.ambientColor = savedAmbientColor;
 }
 @end

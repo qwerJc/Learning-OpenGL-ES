@@ -37,11 +37,18 @@ static const SceneVertex vertices[] =
 //    {{-0.5f,  0.5f, 0.0},{1.f,1.f}},  // 左上
 };
 
+static const SceneVertex vertices2[] =
+{
+    {{-0.9f, -0.9f, 0.f}}, // 左下
+    {{ 0.f, -0.9f, 0.f}}, // 右下
+    {{-0.9f,  0.f, 0.f}},  // 左上
+};
+
 @interface ViewController_CH2_Practice ()
 @property (strong, nonatomic) GLKBaseEffect *baseEffect; // 设置绘图的基础类
 
 @property (nonatomic, readonly) GLuint glName; // 生成一个标识符，并保存在vertexBufferID指针指向的位置
-
+@property (nonatomic, readonly) GLuint glNameTemp;
 @end
 
 @implementation ViewController_CH2_Practice
@@ -66,6 +73,7 @@ static const SceneVertex vertices[] =
     // bg color
     ((AGLKContext *)view.context).clearColor = GLKVector4Make(.3f, .5f, 0.2f, 1.f);
     
+    /**********************【顶点数组1】**************************/
     // 创建顶点数据准备绘制
     // step 1 申请一个标识符
     glGenBuffers(1, &_glName);
@@ -86,12 +94,21 @@ static const SceneVertex vertices[] =
     // 将创建的纹理缓存赋给 baseEffect
     self.baseEffect.texture2d0.name = textureInfo.name;
     self.baseEffect.texture2d0.target = textureInfo.target;
+    
+    /**********************【顶点数组2】**************************/
+    glGenBuffers(1, &_glNameTemp);
+    glBindBuffer(GL_ARRAY_BUFFER, _glNameTemp);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices2),vertices2,GL_STATIC_DRAW);
+    
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    [self.baseEffect prepareToDraw];
+    
     
     [((AGLKContext *)view.context) clear:GL_COLOR_BUFFER_BIT];
+    
+    // step 2 重新绑定
+    glBindBuffer(GL_ARRAY_BUFFER, _glName);
     
     // step4 是开启对应的顶点属性
     glEnableVertexAttribArray(GLKVertexAttribPosition);
@@ -105,7 +122,18 @@ static const SceneVertex vertices[] =
     
     // step 6 绘制图形
     glDrawArrays(GL_TRIANGLES, 0, 6);
+    
+    [self.baseEffect prepareToDraw];
 
+    /**********************【顶点数组2】**************************/
+    glBindBuffer(GL_ARRAY_BUFFER, _glNameTemp);
+    [self.baseEffect prepareToDraw];
+//    self.baseEffect.constantColor = GLKVector4Make(0.2, 0.4, 0.2, 1.f);
+    glEnableVertexAttribArray(GLKVertexAttribPosition);
+    glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, (GLsizei)sizeof(SceneVertex), offsetof(SceneVertex, positionCoords));
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+    
+    [self.baseEffect prepareToDraw];
 }
 
 @end

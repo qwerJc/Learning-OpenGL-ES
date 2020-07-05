@@ -6,12 +6,14 @@
 //  Copyright © 2020 JJC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+//#import <GLKit/GLKit.h>
+#import <GLKit/GLKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Car_Test_Car : NSObject
 - (void)prepareToDraw;
+- (void)drawWithBaseEffect:(GLKBaseEffect *)anEffect color:(GLKVector4)carColor;
 - (void)move;
 @end
 

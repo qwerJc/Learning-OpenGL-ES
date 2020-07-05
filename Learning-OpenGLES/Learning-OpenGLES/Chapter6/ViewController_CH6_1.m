@@ -89,47 +89,48 @@
     [((AGLKContext *)view.context) enable:GL_BLEND];
 
     // Load models used to draw the scene
-//    self.carModel = [[SceneCarModel alloc] init];
+    SceneCarModel *extractedExpr = [[SceneCarModel alloc] init];
+    self.carModel = extractedExpr;
     self.rinkModel = [[SceneRinkModel alloc] init];
     
     // Remember the rink bounding box for future collision
     // detection with cars
     
-//    self.rinkBoundingBox = self.rinkModel.axisAlignedBoundingBox;
-//    NSAssert(0 < (self.rinkBoundingBox.max.x -
-//       self.rinkBoundingBox.min.x) &&
-//       0 < (self.rinkBoundingBox.max.z -
-//       self.rinkBoundingBox.min.z),
-//       @"Rink has no area");
-//
-//    // Create and add some cars to the simulation. The number of
-//    // cars, colors and velocities are arbitrary
-//    SceneCar *newCar = [[SceneCar alloc] initWithModel:self.carModel
-//                                                position:GLKVector3Make(1.0, 0.0, 1.0)
-//                                                velocity:GLKVector3Make(1.5, 0.0, 1.5)
-//                                                   color:GLKVector4Make(0.0, 0.5, 0.0, 1.0)];
-//    [cars addObject:newCar];
-//
-//    newCar = [[SceneCar alloc]
-//       initWithModel:self.carModel
-//       position:GLKVector3Make(-1.0, 0.0, 1.0)
-//       velocity:GLKVector3Make(-1.5, 0.0, 1.5)
-//       color:GLKVector4Make(0.5, 0.5, 0.0, 1.0)];
-//    [cars addObject:newCar];
-//
-//    newCar = [[SceneCar alloc]
-//       initWithModel:self.carModel
-//       position:GLKVector3Make(1.0, 0.0, -1.0)
-//       velocity:GLKVector3Make(-1.5, 0.0, -1.5)
-//       color:GLKVector4Make(0.5, 0.0, 0.0, 1.0)];
-//    [cars addObject:newCar];
-//
-//    newCar = [[SceneCar alloc]
-//       initWithModel:self.carModel
-//       position:GLKVector3Make(2.0, 0.0, -2.0)
-//       velocity:GLKVector3Make(-1.5, 0.0, -0.5)
-//       color:GLKVector4Make(0.3, 0.0, 0.3, 1.0)];
-//    [cars addObject:newCar];
+    self.rinkBoundingBox = self.rinkModel.axisAlignedBoundingBox;
+    NSAssert(0 < (self.rinkBoundingBox.max.x -
+       self.rinkBoundingBox.min.x) &&
+       0 < (self.rinkBoundingBox.max.z -
+       self.rinkBoundingBox.min.z),
+       @"Rink has no area");
+
+    // Create and add some cars to the simulation. The number of
+    // cars, colors and velocities are arbitrary
+    SceneCar *newCar = [[SceneCar alloc] initWithModel:self.carModel
+                                                position:GLKVector3Make(1.0, 0.0, 1.0)
+                                                velocity:GLKVector3Make(1.5, 0.0, 1.5)
+                                                   color:GLKVector4Make(0.0, 0.5, 0.0, 1.0)];
+    [cars addObject:newCar];
+
+    newCar = [[SceneCar alloc]
+       initWithModel:self.carModel
+       position:GLKVector3Make(-1.0, 0.0, 1.0)
+       velocity:GLKVector3Make(-1.5, 0.0, 1.5)
+       color:GLKVector4Make(0.5, 0.5, 0.0, 1.0)];
+    [cars addObject:newCar];
+
+    newCar = [[SceneCar alloc]
+       initWithModel:self.carModel
+       position:GLKVector3Make(1.0, 0.0, -1.0)
+       velocity:GLKVector3Make(-1.5, 0.0, -1.5)
+       color:GLKVector4Make(0.5, 0.0, 0.0, 1.0)];
+    [cars addObject:newCar];
+
+    newCar = [[SceneCar alloc]
+       initWithModel:self.carModel
+       position:GLKVector3Make(2.0, 0.0, -2.0)
+       velocity:GLKVector3Make(-1.5, 0.0, -0.5)
+       color:GLKVector4Make(0.3, 0.0, 0.3, 1.0)];
+    [cars addObject:newCar];
 
     // Set initial point of view to reasonable arbitrary values
     // These values make most of the simulated rink visible

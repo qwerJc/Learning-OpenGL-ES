@@ -110,9 +110,6 @@ static const SceneVertex vertices[] =
 // 6、绘图
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    // 告诉 baseEffect 准备好上下文，为 baseEffect生成的属性 和 Shading Language程序绘图做好准备
-    [self.baseEffect prepareToDraw];
-    
     // 设置当前绑定的帧缓存中的每个像素颜色为之前设置的值（清除渲染的内容）
     // 由于帧缓存可能有 除了像素颜色渲染缓存之外 的 其他附加缓存，这里就是统一为每个像素重设颜色，以达到清除的效果
     glClear(GL_COLOR_BUFFER_BIT);
@@ -143,6 +140,10 @@ static const SceneVertex vertices[] =
     glDrawArrays(GL_TRIANGLES,
                  0,  // 缓存内需要渲染的第一个顶点的位置
                  3); // 需要渲染的顶点的数量
+    
+    // 告诉 baseEffect 准备好上下文，为 baseEffect生成的属性 和 Shading Language程序绘图做好准备
+    // 会按照上方的设置进行绘制
+    [self.baseEffect prepareToDraw];
 }
 
 // 视图被卸载时调用（iOS6及之后已经被废弃，不再被调用，此处仅供参考）

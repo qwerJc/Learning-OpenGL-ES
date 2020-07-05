@@ -42,7 +42,7 @@
     
     self.baseEffect = [[GLKBaseEffect alloc] init];
     self.baseEffect.light0.enabled = GL_TRUE;
-    self.baseEffect.light0.diffuseColor = GLKVector4Make(0.7f, 0.7f, 0.7f, 1.f);
+    self.baseEffect.light0.diffuseColor = GLKVector4Make(0.1f, 0.1f, 0.1f, 1.f);
     self.baseEffect.light0.ambientColor = GLKVector4Make(0.2f, 0.2f, 0.2f, 1.f);
     self.baseEffect.light0.position = GLKVector4Make(1.f, 0.f, -0.8f, 0.f);
     
@@ -59,7 +59,12 @@
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    [self.baseEffect prepareToDraw];
+//    [self.baseEffect prepareToDraw];
+    self.baseEffect.light0.diffuseColor = GLKVector4Make(
+    1.0f, // Red
+    1.0f, // Green
+    1.0f, // Blue
+    1.0f);// Alpha
     
     [(AGLKContext *)view.context clear:GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT];
     
@@ -85,11 +90,22 @@
           self.lookAtPosition.z,
           0, 1, 0);
     
+//    [self.baseEffect prepareToDraw];
+//    self.baseEffect.material.diffuseColor = GLKVector4Make(0.1, 0.2, 0.9, 1.0);
+//    self.baseEffect.material.ambientColor = GLKVector4Make(0.1, 0.2, 0.9, 1.0);
     [self.rink prepareToDraw];
     
-    self.baseEffect.
+    [self.baseEffect prepareToDraw];
     
-    [self.car prepareToDraw];
+
+    [self.car drawWithBaseEffect:self.baseEffect
+                           color:GLKVector4Make(0.5, 0.8, 0.8, 1.0)];
+//    [self.baseEffect prepareToDraw];
+    
+}
+
+- (void)update {
+    
 }
 
 @end

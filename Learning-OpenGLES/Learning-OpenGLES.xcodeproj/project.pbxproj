@@ -226,9 +226,8 @@
 		327DD1E424AB7F2300486529 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				32A680D724B1A5A40063E52D /* glsl */,
 				3279BD8524AD711D00D1A1CC /* Car-test */,
-				327DD1E524AB7F3300486529 /* ViewController_GLSL.h */,
-				327DD1E624AB7F3300486529 /* ViewController_GLSL.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -319,6 +318,15 @@
 				32A332CA24AC490500D8F571 /* SceneCarModel.m */,
 			);
 			path = Car;
+			sourceTree = "<group>";
+		};
+		32A680D724B1A5A40063E52D /* glsl */ = {
+			isa = PBXGroup;
+			children = (
+				327DD1E524AB7F3300486529 /* ViewController_GLSL.h */,
+				327DD1E624AB7F3300486529 /* ViewController_GLSL.m */,
+			);
+			path = glsl;
 			sourceTree = "<group>";
 		};
 		32A78DE724A306F6008D937C /* 2-1 */ = {
