@@ -25,6 +25,8 @@
 
 #import "ViewController_CH6_1.h"
 
+#import "ViewController_CH7_1.h"
+
 @interface ViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 @property (strong, nonatomic) NSArray *arrData;
 @end
@@ -32,7 +34,7 @@
 @implementation ViewController
 
 - (void)createData {
-    _arrData = [NSArray arrayWithObjects:@"glsl",@"car-test",@"Ch6-1",@"Ch2-1",@"Ch2-3",@"Ch2-Try",@"Ch3-1",@"Ch3-2",@"Ch4-1",@"Ch4-2",@"Ch5-1",@"Ch5-4",nil];
+    _arrData = [NSArray arrayWithObjects:@"CH7-1",@"glsl",@"car-test",@"Ch6-1",@"Ch2-1",@"Ch2-3",@"Ch2-Try",@"Ch3-1",@"Ch3-2",@"Ch4-1",@"Ch4-2",@"Ch5-1",@"Ch5-4",nil];
 }
 
 - (void)viewDidLoad {
@@ -97,6 +99,8 @@
         [self onShowChapter6_1];
     } else if ([title isEqualToString:@"car-test"]) {
         [self onShowCarTest];
+    } else if ([title isEqualToString:@"CH7-1"]) {
+        [self onShowChatper7_1];
     }
     
     if ([title isEqualToString:@"Ch2-1"]) {
@@ -132,6 +136,15 @@
 }
 
 #pragma mark - Show Chapter
+- (void)onShowChatper7_1 {
+    ViewController_CH7_1 *vc = [[ViewController_CH7_1 alloc] init];
+    vc.modalPresentationStyle = 0;
+    [self presentViewController:vc
+                       animated:YES
+                     completion:^{
+    }];
+}
+
 - (void)onShowCarTest {
     ViewController_Car_Test *vc = [[ViewController_Car_Test alloc] init];
     vc.modalPresentationStyle = 0;

@@ -22,6 +22,12 @@
 		32061636249DD5680047B17D /* GLKViewController+BtnBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 32061635249DD5680047B17D /* GLKViewController+BtnBack.m */; };
 		3225CB9724A0EFFC00FB2018 /* ViewController_CH3_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3225CB9624A0EFFC00FB2018 /* ViewController_CH3_1.m */; };
 		3225CB9924A0F27900FB2018 /* img1-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3225CB9824A0F27900FB2018 /* img1-1.png */; };
+		323F124A24B2F41A008D52C2 /* UtilityMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F124924B2F41A008D52C2 /* UtilityMesh.m */; };
+		323F124D24B2F42C008D52C2 /* UtilityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F124C24B2F42C008D52C2 /* UtilityModel.m */; };
+		323F125024B2F48E008D52C2 /* UtilityModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F124F24B2F48E008D52C2 /* UtilityModelManager.m */; };
+		323F125324B303B8008D52C2 /* GLKTextureInfo+utilityAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F125224B303B8008D52C2 /* GLKTextureInfo+utilityAdditions.m */; };
+		323F125724B3591E008D52C2 /* ViewController_CH7_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 323F125624B3591E008D52C2 /* ViewController_CH7_1.m */; };
+		323F125924B37091008D52C2 /* bumper.modelplist in Resources */ = {isa = PBXBuildFile; fileRef = 323F125824B37091008D52C2 /* bumper.modelplist */; };
 		324C8F1524A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 324C8F1424A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m */; };
 		326B262024AAC67A000781FB /* ViewController_CH6_1.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B261F24AAC67A000781FB /* ViewController_CH6_1.m */; };
 		326B262324AAC786000781FB /* SceneCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 326B262224AAC786000781FB /* SceneCar.m */; };
@@ -69,6 +75,17 @@
 		3225CB9524A0EFFC00FB2018 /* ViewController_CH3_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH3_1.h; sourceTree = "<group>"; };
 		3225CB9624A0EFFC00FB2018 /* ViewController_CH3_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH3_1.m; sourceTree = "<group>"; };
 		3225CB9824A0F27900FB2018 /* img1-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img1-1.png"; sourceTree = "<group>"; };
+		323F124824B2F41A008D52C2 /* UtilityMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityMesh.h; sourceTree = "<group>"; };
+		323F124924B2F41A008D52C2 /* UtilityMesh.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityMesh.m; sourceTree = "<group>"; };
+		323F124B24B2F42C008D52C2 /* UtilityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityModel.h; sourceTree = "<group>"; };
+		323F124C24B2F42C008D52C2 /* UtilityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityModel.m; sourceTree = "<group>"; };
+		323F124E24B2F48E008D52C2 /* UtilityModelManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityModelManager.h; sourceTree = "<group>"; };
+		323F124F24B2F48E008D52C2 /* UtilityModelManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityModelManager.m; sourceTree = "<group>"; };
+		323F125124B303B8008D52C2 /* GLKTextureInfo+utilityAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GLKTextureInfo+utilityAdditions.h"; sourceTree = "<group>"; };
+		323F125224B303B8008D52C2 /* GLKTextureInfo+utilityAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GLKTextureInfo+utilityAdditions.m"; sourceTree = "<group>"; };
+		323F125524B3591E008D52C2 /* ViewController_CH7_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH7_1.h; sourceTree = "<group>"; };
+		323F125624B3591E008D52C2 /* ViewController_CH7_1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController_CH7_1.m; sourceTree = "<group>"; };
+		323F125824B37091008D52C2 /* bumper.modelplist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = bumper.modelplist; sourceTree = "<group>"; };
 		324C8F1324A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGLKVertexAttribArrayBuffer.h; sourceTree = "<group>"; };
 		324C8F1424A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGLKVertexAttribArrayBuffer.m; sourceTree = "<group>"; };
 		326B261E24AAC67A000781FB /* ViewController_CH6_1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_CH6_1.h; sourceTree = "<group>"; };
@@ -210,6 +227,31 @@
 				328D41BB24A74C0D00240396 /* 3-6 */,
 			);
 			path = Chapter3;
+			sourceTree = "<group>";
+		};
+		323F124724B2F3F0008D52C2 /* ModelLoading */ = {
+			isa = PBXGroup;
+			children = (
+				323F124824B2F41A008D52C2 /* UtilityMesh.h */,
+				323F124924B2F41A008D52C2 /* UtilityMesh.m */,
+				323F124B24B2F42C008D52C2 /* UtilityModel.h */,
+				323F124C24B2F42C008D52C2 /* UtilityModel.m */,
+				323F124E24B2F48E008D52C2 /* UtilityModelManager.h */,
+				323F124F24B2F48E008D52C2 /* UtilityModelManager.m */,
+				323F125124B303B8008D52C2 /* GLKTextureInfo+utilityAdditions.h */,
+				323F125224B303B8008D52C2 /* GLKTextureInfo+utilityAdditions.m */,
+			);
+			path = ModelLoading;
+			sourceTree = "<group>";
+		};
+		323F125424B35841008D52C2 /* 7-1 */ = {
+			isa = PBXGroup;
+			children = (
+				323F125824B37091008D52C2 /* bumper.modelplist */,
+				323F125524B3591E008D52C2 /* ViewController_CH7_1.h */,
+				323F125624B3591E008D52C2 /* ViewController_CH7_1.m */,
+			);
+			path = "7-1";
 			sourceTree = "<group>";
 		};
 		3279BD8524AD711D00D1A1CC /* Car-test */ = {
@@ -358,6 +400,8 @@
 		32BBBB3724A98A75001047D7 /* Chapter7 */ = {
 			isa = PBXGroup;
 			children = (
+				323F125424B35841008D52C2 /* 7-1 */,
+				323F124724B2F3F0008D52C2 /* ModelLoading */,
 			);
 			path = Chapter7;
 			sourceTree = "<group>";
@@ -471,6 +515,7 @@
 				32061618249DCC600047B17D /* Assets.xcassets in Resources */,
 				32BBBB3E24A98AC9001047D7 /* Earth512x256.jpg in Resources */,
 				32061616249DCC5B0047B17D /* Main.storyboard in Resources */,
+				323F125924B37091008D52C2 /* bumper.modelplist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,13 +527,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				3299ACF524A58E3B003FB104 /* ViewController_CH2_Practice.m in Sources */,
+				323F125724B3591E008D52C2 /* ViewController_CH7_1.m in Sources */,
+				323F124A24B2F41A008D52C2 /* UtilityMesh.m in Sources */,
+				323F125024B2F48E008D52C2 /* UtilityModelManager.m in Sources */,
 				3299ACFA24A5B796003FB104 /* AGLKTextureLoader.m in Sources */,
 				3279BD9224ADCB9200D1A1CC /* Car_Test_Car.m in Sources */,
 				3299ACFD24A63AF4003FB104 /* ViewController_CH3_2.m in Sources */,
 				32061626249DCCDD0047B17D /* ViewController_CH2_1.m in Sources */,
 				32061613249DCC5B0047B17D /* ViewController.m in Sources */,
+				323F124D24B2F42C008D52C2 /* UtilityModel.m in Sources */,
 				324C8F1524A354B6008F9BDD /* AGLKVertexAttribArrayBuffer.m in Sources */,
 				32A78DEB24A30788008D937C /* AGLKContext.m in Sources */,
+				323F125324B303B8008D52C2 /* GLKTextureInfo+utilityAdditions.m in Sources */,
 				328D41BE24A74C3400240396 /* ViewController_CH3_3.m in Sources */,
 				3206160D249DCC5B0047B17D /* AppDelegate.m in Sources */,
 				32BBBB4424A99EBF001047D7 /* ViewController_CH5_4.m in Sources */,

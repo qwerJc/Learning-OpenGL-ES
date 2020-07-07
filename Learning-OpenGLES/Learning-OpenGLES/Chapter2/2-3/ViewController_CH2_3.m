@@ -61,6 +61,7 @@ static const SceneVertex vertices[] =
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
+    // 这里注意 先设置颜色 再调用 prepareToDraw 再 drawArrayWithMode
     [self.baseEffect prepareToDraw];
     
     [((AGLKContext *)view.context) clear:GL_COLOR_BUFFER_BIT];

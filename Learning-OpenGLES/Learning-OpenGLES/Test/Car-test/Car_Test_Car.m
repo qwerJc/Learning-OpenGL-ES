@@ -75,6 +75,7 @@
     // Draw the model
     [self prepareToDraw];
     
+     // 这里注意 先设置颜色 再调用 prepareToDraw 再 drawArrayWithMode ？？
     [anEffect prepareToDraw];
     
     // Restore saved attributes

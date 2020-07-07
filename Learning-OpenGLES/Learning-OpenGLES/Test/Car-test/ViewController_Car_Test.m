@@ -96,7 +96,6 @@
     [self.rink prepareToDraw];
     
     [self.baseEffect prepareToDraw];
-    
 
     [self.car drawWithBaseEffect:self.baseEffect
                            color:GLKVector4Make(0.5, 0.8, 0.8, 1.0)];
